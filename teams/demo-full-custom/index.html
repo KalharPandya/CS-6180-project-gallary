@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NLP Dashboard — CS-6180</title>
+  <!-- FULLY CUSTOM MODE: No shared stylesheets, no project-loader.js.
+       This page is 100% self-contained with its own embedded styles and JS. -->
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Segoe UI', system-ui, sans-serif;
+      background: #0f172a;
+      color: #e2e8f0;
+      min-height: 100vh;
+    }
+
+    .back-link {
+      display: inline-block;
+      padding: 0.75rem 1.5rem;
+      color: #94a3b8;
+      text-decoration: none;
+      font-size: 0.9rem;
+      transition: color 0.2s;
+    }
+    .back-link:hover { color: #e2e8f0; }
+
+    header {
+      background: linear-gradient(135deg, #1e3a5f, #0f172a);
+      padding: 3rem 2rem 2rem;
+      text-align: center;
+      border-bottom: 1px solid #1e293b;
+    }
+    header h1 { font-size: 2.5rem; font-weight: 800; color: #f1f5f9; margin-bottom: 0.5rem; }
+    header p  { color: #94a3b8; font-size: 1rem; }
+    .badge { display: inline-block; background: #1e40af; color: #bfdbfe; padding: 0.25rem 0.75rem; border-radius: 999px; font-size: 0.8rem; margin: 0.25rem; }
+
+    .container { max-width: 900px; margin: 0 auto; padding: 2rem 1.5rem; }
+
+    .section { margin-bottom: 2.5rem; }
+    .section h2 { font-size: 1.3rem; font-weight: 700; color: #93c5fd; border-bottom: 1px solid #1e293b; padding-bottom: 0.5rem; margin-bottom: 1rem; }
+
+    /* Interactive demo */
+    .demo-box {
+      background: #1e293b;
+      border: 1px solid #334155;
+      border-radius: 12px;
+      padding: 1.5rem;
+    }
+    .demo-box textarea {
+      width: 100%;
+      background: #0f172a;
+      color: #e2e8f0;
+      border: 1px solid #334155;
+      border-radius: 8px;
+      padding: 0.75rem;
+      font-size: 0.95rem;
+      resize: vertical;
+      min-height: 100px;
+      font-family: inherit;
+    }
+    .demo-box textarea:focus { outline: none; border-color: #3b82f6; }
+    .btn {
+      margin-top: 0.75rem;
+      background: #2563eb;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      padding: 0.6rem 1.5rem;
+      font-size: 0.95rem;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    .btn:hover { background: #1d4ed8; }
+    #result {
+      margin-top: 1rem;
+      background: #0f172a;
+      border: 1px solid #334155;
+      border-radius: 8px;
+      padding: 0.75rem 1rem;
+      font-size: 0.9rem;
+      color: #94a3b8;
+      min-height: 2.5rem;
+    }
+    .sentiment-pos { color: #34d399; font-weight: 700; }
+    .sentiment-neg { color: #f87171; font-weight: 700; }
+    .sentiment-neu { color: #fbbf24; font-weight: 700; }
+
+    /* Metrics grid */
+    .metrics { display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 1rem; }
+    .metric-card {
+      background: #1e293b;
+      border: 1px solid #334155;
+      border-radius: 10px;
+      padding: 1.25rem;
+      text-align: center;
+    }
+    .metric-card .value { font-size: 2rem; font-weight: 800; color: #60a5fa; }
+    .metric-card .label { font-size: 0.8rem; color: #94a3b8; margin-top: 0.25rem; }
+  </style>
+</head>
+<body>
+  <a class="back-link" href="../../index.html">&larr; Back to Gallery</a>
+
+  <header>
+    <h1>Interactive NLP Dashboard</h1>
+    <p>Jack Wilson · Kate Nguyen · Leo Ramirez &mdash; CS-6180</p>
+    <div style="margin-top:0.75rem;">
+      <span class="badge">NLP</span>
+      <span class="badge">Sentiment Analysis</span>
+      <span class="badge">BERT</span>
+      <span class="badge">Interactive</span>
+    </div>
+  </header>
+
+  <div class="container">
+
+    <div class="section">
+      <h2>Abstract</h2>
+      <p style="line-height:1.7; color:#cbd5e1;">
+        We fine-tuned BERT-base on a combined corpus of 240k Amazon, Yelp, and Twitter reviews
+        for multi-domain sentiment classification. Our model achieves 94.1% accuracy on a held-out
+        test set and generalizes well across domains. Below is a live demo running inference
+        client-side via ONNX Runtime Web.
+      </p>
+    </div>
+
+    <div class="section">
+      <h2>Live Demo — Sentiment Analysis</h2>
+      <div class="demo-box">
+        <textarea id="inputText" placeholder="Type a sentence to analyze sentiment...">The robot navigation system worked flawlessly in all test environments!</textarea>
+        <br>
+        <button class="btn" onclick="analyzeSentiment()">Analyze</button>
+        <div id="result">Result will appear here.</div>
+      </div>
+      <p style="font-size:0.8rem; color:#475569; margin-top:0.5rem;">
+        Note: This demo uses a simple lexicon-based heuristic as a stand-in for the full ONNX model.
+        The real model weights are available in the GitHub repo.
+      </p>
+    </div>
+
+    <div class="section">
+      <h2>Performance</h2>
+      <div class="metrics">
+        <div class="metric-card"><div class="value">94.1%</div><div class="label">Test Accuracy</div></div>
+        <div class="metric-card"><div class="value">0.941</div><div class="label">Macro F1</div></div>
+        <div class="metric-card"><div class="value">240k</div><div class="label">Training Examples</div></div>
+        <div class="metric-card"><div class="value">3</div><div class="label">Domains</div></div>
+        <div class="metric-card"><div class="value">18ms</div><div class="label">Inference Latency</div></div>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2>Approach</h2>
+      <p style="line-height:1.7; color:#cbd5e1;">
+        We fine-tuned <code style="background:#1e293b;padding:0.1rem 0.4rem;border-radius:4px;">bert-base-uncased</code>
+        for 3 epochs using AdamW (lr=2e-5, warmup=10%). Domain adaptation was applied via continued
+        pre-training on in-domain unlabeled text before fine-tuning. The model is exported to ONNX
+        and quantized for client-side inference.
+      </p>
+    </div>
+
+  </div>
+
+  <script>
+    const posWords = ['great','good','excellent','amazing','fantastic','love','perfect','best','wonderful','flawless','outstanding'];
+    const negWords = ['bad','terrible','awful','horrible','hate','worst','poor','broken','failed','disappointing','boring'];
+
+    function analyzeSentiment() {
+      const text = document.getElementById('inputText').value.toLowerCase();
+      const result = document.getElementById('result');
+      if (!text.trim()) { result.textContent = 'Please enter some text.'; return; }
+
+      const posScore = posWords.filter(w => text.includes(w)).length;
+      const negScore = negWords.filter(w => text.includes(w)).length;
+
+      let label, conf, cls;
+      if (posScore > negScore) {
+        label = 'POSITIVE'; conf = Math.min(0.99, 0.65 + posScore * 0.08); cls = 'sentiment-pos';
+      } else if (negScore > posScore) {
+        label = 'NEGATIVE'; conf = Math.min(0.99, 0.65 + negScore * 0.08); cls = 'sentiment-neg';
+      } else {
+        label = 'NEUTRAL'; conf = 0.61 + Math.random() * 0.1; cls = 'sentiment-neu';
+      }
+
+      result.innerHTML = `Prediction: <span class="${cls}">${label}</span> &nbsp;|&nbsp; Confidence: <strong>${(conf * 100).toFixed(1)}%</strong>`;
+    }
+  </script>
+</body>
+</html>

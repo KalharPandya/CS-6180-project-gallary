@@ -1,0 +1,8 @@
+{
+  "name": "Demo: Video Showcase",
+  "title": "Real-Time Object Detection Pipeline",
+  "members": ["Frank Torres", "Grace Kim"],
+  "description": "A video-only project page with a YouTube embed and minimal surrounding context.",
+  "thumbnail": "assets/thumbnail.svg",
+  "tags": ["computer-vision", "object-detection", "video-demo"]
+}

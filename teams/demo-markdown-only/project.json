@@ -1,0 +1,8 @@
+{
+  "name": "Demo: Markdown Report",
+  "title": "Reinforcement Learning for Robot Navigation",
+  "members": ["Alice Chen", "Bob Martinez", "Carol Liu"],
+  "description": "A markdown-only report demonstrating text, tables, code blocks, and local images rendered from README.md.",
+  "thumbnail": "assets/thumbnail.svg",
+  "tags": ["reinforcement-learning", "robotics", "markdown-demo"]
+}

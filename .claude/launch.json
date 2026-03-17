@@ -1,0 +1,12 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "gallery",
+      "runtimeExecutable": "cmd",
+      "runtimeArgs": ["/c", "npx serve . --listen tcp://0.0.0.0:$PORT"],
+      "port": 3000,
+      "autoPort": true
+    }
+  ]
+}

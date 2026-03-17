@@ -1,0 +1,8 @@
+{
+  "name": "Demo: Fully Custom",
+  "title": "Interactive NLP Dashboard",
+  "members": ["Jack Wilson", "Kate Nguyen", "Leo Ramirez"],
+  "description": "Fully self-contained page with its own embedded CSS and JS — zero dependencies on shared site files.",
+  "thumbnail": "assets/thumbnail.svg",
+  "tags": ["nlp", "interactive", "full-custom-demo"]
+}

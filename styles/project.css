@@ -1,0 +1,233 @@
+:root {
+  --primary: #1a365d;
+  --bg: #f7fafc;
+  --bg-card: #ffffff;
+  --text: #1a202c;
+  --text-muted: #718096;
+  --border: #e2e8f0;
+  --code-bg: #f0f4f8;
+  --radius: 8px;
+  --content-width: 820px;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --primary: #90cdf4;
+    --bg: #1a202c;
+    --bg-card: #2d3748;
+    --text: #e2e8f0;
+    --text-muted: #a0aec0;
+    --border: #4a5568;
+    --code-bg: #1e2a3a;
+  }
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.7;
+}
+
+/* Nav */
+.top-nav {
+  background: var(--bg-card);
+  border-bottom: 1px solid var(--border);
+  padding: 0.875rem 1.5rem;
+}
+
+.top-nav a {
+  color: var(--primary);
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.top-nav a:hover {
+  text-decoration: underline;
+}
+
+/* Content area */
+#content {
+  max-width: var(--content-width);
+  margin: 2.5rem auto 4rem;
+  padding: 0 1.5rem;
+}
+
+/* Byline (author/team subtitle) */
+.byline {
+  color: var(--text-muted);
+  font-size: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+/* Loading / error states */
+#content .loading,
+#content .error {
+  color: var(--text-muted);
+  text-align: center;
+  padding: 3rem 0;
+}
+
+/* Typography */
+#content h1 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  line-height: 1.3;
+}
+
+#content h2 {
+  font-size: 1.45rem;
+  font-weight: 600;
+  margin: 2.5rem 0 0.75rem;
+  padding-bottom: 0.4rem;
+  border-bottom: 1px solid var(--border);
+}
+
+#content h3 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin: 2rem 0 0.5rem;
+}
+
+#content h4, #content h5, #content h6 {
+  font-size: 1rem;
+  font-weight: 600;
+  margin: 1.5rem 0 0.4rem;
+}
+
+#content p {
+  margin-bottom: 1rem;
+}
+
+#content a {
+  color: var(--primary);
+}
+
+#content ul, #content ol {
+  margin: 0.5rem 0 1rem 1.5rem;
+}
+
+#content li {
+  margin-bottom: 0.3rem;
+}
+
+#content blockquote {
+  border-left: 4px solid var(--border);
+  padding: 0.5rem 1rem;
+  margin: 1rem 0;
+  color: var(--text-muted);
+}
+
+#content hr {
+  border: none;
+  border-top: 1px solid var(--border);
+  margin: 2rem 0;
+}
+
+/* Images */
+#content img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 1.5rem auto;
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+}
+
+/* Responsive video / iframe wrapper */
+#content iframe,
+#content video {
+  display: block;
+  max-width: 100%;
+  margin: 1.5rem auto;
+  border-radius: var(--radius);
+  border: none;
+}
+
+/* Wrap iframes in a responsive container (injected by project-loader.js) */
+.video-wrapper {
+  position: relative;
+  width: 100%;
+  padding-bottom: 56.25%; /* 16:9 */
+  height: 0;
+  margin: 1.5rem 0;
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+
+.video-wrapper iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  border-radius: 0;
+}
+
+/* Tables */
+#content table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1.5rem 0;
+  font-size: 0.9rem;
+}
+
+#content th {
+  background: var(--code-bg);
+  font-weight: 600;
+  text-align: left;
+}
+
+#content th, #content td {
+  padding: 0.6rem 0.9rem;
+  border: 1px solid var(--border);
+}
+
+#content tr:nth-child(even) td {
+  background: var(--code-bg);
+}
+
+/* Code */
+#content code {
+  font-family: 'JetBrains Mono', 'Fira Code', 'Cascadia Code', monospace;
+  font-size: 0.875em;
+  background: var(--code-bg);
+  padding: 0.15em 0.4em;
+  border-radius: 4px;
+}
+
+#content pre {
+  background: var(--code-bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.25rem;
+  overflow-x: auto;
+  margin: 1.5rem 0;
+}
+
+#content pre code {
+  background: none;
+  padding: 0;
+  font-size: 0.875rem;
+}
+
+/* Print */
+@media print {
+  .top-nav { display: none; }
+  #content { margin: 0; max-width: 100%; }
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+  #content h1 { font-size: 1.6rem; }
+  #content h2 { font-size: 1.25rem; }
+}

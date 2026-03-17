@@ -1,0 +1,8 @@
+{
+  "name": "Demo: Image Poster",
+  "title": "Transformer Attention Visualization",
+  "members": ["David Park", "Eve Johnson"],
+  "description": "An image-only project page — a single research poster displayed full width.",
+  "thumbnail": "assets/poster.png",
+  "tags": ["transformers", "visualization", "image-demo"]
+}

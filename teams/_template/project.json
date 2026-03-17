@@ -1,0 +1,8 @@
+{
+  "name": "Team Name",
+  "title": "Project Title",
+  "members": ["Member 1", "Member 2"],
+  "description": "One-line description for the gallery card.",
+  "thumbnail": "assets/thumbnail.png",
+  "tags": ["tag1", "tag2"]
+}

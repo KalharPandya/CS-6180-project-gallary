@@ -1,0 +1,8 @@
+{
+  "name": "Demo: Custom HTML",
+  "title": "Generative Adversarial Network Art",
+  "members": ["Henry Zhao", "Iris Patel"],
+  "description": "Custom HTML written directly in index.html, using the shared project stylesheet but no markdown loader.",
+  "thumbnail": "assets/thumbnail.svg",
+  "tags": ["gan", "generative-art", "custom-html-demo"]
+}
