@@ -115,13 +115,19 @@ body { background: #000; }
   display: block;
 }
 
-/* ─── PDF embed ─── */
+/* ─── Poster panel (scrollable for tall PNG posters) ─── */
+.viewer-panel--poster {
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+/* ─── PDF embed / poster image ─── */
 .viewer-pdf {
-  position: absolute;
-  inset: 0;
+  display: block;
   width: 100%;
   height: 100%;
   border: none;
+  object-fit: contain;   /* for <img>: letterbox, don't stretch */
 }
 
 /* ─── Video wrap ─── */

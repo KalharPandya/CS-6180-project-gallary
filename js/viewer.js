@@ -6,6 +6,15 @@
       <polygon points="35,26 67,44 35,62" fill="#fff"/>
     </svg>`;
 
+  /* ── Poster element helper ───────────────────────── */
+  function posterTag(url, cls) {
+    if (!url) return `<img class="${cls}">`;
+    const isImg = /\.(png|jpe?g|webp|gif)$/i.test(url);
+    return isImg
+      ? `<img class="${cls}" src="${url}" alt="Poster">`
+      : `<embed class="${cls}" type="application/pdf" src="${url}#view=Fit&toolbar=0">`;
+  }
+
   /* ── Build HTML ──────────────────────────────────── */
   function buildHTML(team, posterUrl, videoUrl) {
     const hasBoth = !!(posterUrl && videoUrl);
@@ -27,8 +36,7 @@
         <div class="viewer-main">
 
           <div class="viewer-panel viewer-panel--poster">
-            <embed class="viewer-pdf" type="application/pdf"
-                   src="${posterUrl ? posterUrl+'#view=Fit&toolbar=0' : ''}">
+            ${posterTag(posterUrl, 'viewer-pdf')}
           </div>
 
           <div class="viewer-panel viewer-panel--video">
@@ -50,8 +58,7 @@
             <button class="viewer-pip-swap" title="Swap main &harr; PiP">&#x21C4;</button>
           </div>
           <div class="viewer-pip-inner">
-            <embed class="viewer-pip-pdf" type="application/pdf"
-                   src="${posterUrl ? posterUrl+'#view=Fit&toolbar=0' : ''}">
+            ${posterTag(posterUrl, 'viewer-pip-pdf')}
             <div class="video-wrap pip-video-wrap">
               <video class="viewer-pip-video" playsinline src="${videoUrl || ''}"></video>
               <div class="video-play-overlay pip-play-overlay">
