@@ -3,8 +3,8 @@ frontend:
   phases:
     preBuild:
       commands:
-        - curl -s https://packagecloud.io/install/repositories/github/git-lfs/script.rpm.sh | bash
-        - yum install -y git-lfs
+        - curl -sL "https://github.com/git-lfs/git-lfs/releases/download/v3.6.0/git-lfs-linux-amd64-v3.6.0.tar.gz" | tar xz -C /tmp
+        - export PATH="$PATH:/tmp/git-lfs-3.6.0"
         - git lfs install
         - git lfs pull
         - node scripts/build.js
