@@ -3,6 +3,8 @@ frontend:
   phases:
     preBuild:
       commands:
+        - curl -s https://packagecloud.io/install/repositories/github/git-lfs/script.rpm.sh | bash
+        - yum install -y git-lfs
         - git lfs install
         - git lfs pull
         - node scripts/build.js
