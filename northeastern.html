@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CS 6180 — Generative AI | Northeastern University</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --nu-red:     #C8102E;
+      --nu-black:   #000000;
+      --nu-dark:    #2D2926;
+      --bg:         #FAFAFA;
+      --bg-card:    #FFFFFF;
+      --text:       #2D2926;
+      --text-muted: #6B6B6B;
+      --border:     #E3E3E3;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html, body {
+      height: 100%;
+      overflow: hidden;
+    }
+
+    body {
+      font-family: 'Lato', sans-serif;
+      background: var(--nu-black);
+      color: var(--text);
+      display: flex;
+      flex-direction: column;
+      height: 100dvh;
+    }
+
+    /* ── Top identity bar ─────────────────────── */
+    .nu-bar {
+      flex-shrink: 0;
+      background: #fff;
+      border-bottom: 3px solid var(--nu-red);
+      padding: 0.5rem 1.5rem;
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+    .nu-bar img { height: 40px; width: auto; display: block; }
+    .nu-bar-links { margin-left: auto; display: flex; gap: 1.5rem; }
+    .nu-bar-links a {
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 0.78rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+    .nu-bar-links a:hover { color: var(--nu-red); }
+
+    /* ── Hero — fills remaining space ────────── */
+    .hero {
+      flex: 1;
+      min-height: 0;
+      background: var(--nu-black);
+      color: #fff;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      position: relative;
+    }
+
+    .hero::after {
+      content: '';
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      height: 3px;
+      background: var(--nu-red);
+    }
+
+    /* Left: course info */
+    .hero-left {
+      padding: 3rem 3rem 3rem 4rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .hero-eyebrow {
+      font-size: 0.7rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      color: var(--nu-red);
+      margin-bottom: 0.75rem;
+    }
+
+    .hero-title {
+      font-size: clamp(2rem, 4.5vw, 4rem);
+      font-weight: 900;
+      line-height: 1.05;
+      letter-spacing: -0.02em;
+      margin-bottom: 1rem;
+    }
+
+    .hero-title span { color: var(--nu-red); }
+
+    .hero-subtitle {
+      font-size: clamp(0.85rem, 1.2vw, 1.05rem);
+      color: rgba(255,255,255,0.65);
+      max-width: 420px;
+      margin-bottom: 2rem;
+      line-height: 1.6;
+    }
+
+    .hero-meta {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem 2rem;
+    }
+
+    .hero-meta-item label {
+      display: block;
+      font-size: 0.65rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: rgba(255,255,255,0.45);
+      margin-bottom: 0.15rem;
+    }
+
+    .hero-meta-item span {
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: #fff;
+    }
+
+    /* Right: resource cards */
+    .hero-right {
+      border-left: 1px solid rgba(255,255,255,0.08);
+      padding: 3rem 4rem 3rem 3rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 1rem;
+    }
+
+    .hero-right-label {
+      font-size: 0.65rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: rgba(255,255,255,0.4);
+      padding-bottom: 0.5rem;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+    }
+
+    .resource-card {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      padding: 0.85rem 1rem;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
+      text-decoration: none;
+      color: #fff;
+      transition: background 0.15s, border-color 0.15s;
+    }
+
+    .resource-card:hover {
+      background: rgba(200,16,46,0.15);
+      border-color: var(--nu-red);
+    }
+
+    .resource-icon {
+      width: 36px;
+      height: 36px;
+      background: var(--nu-red);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      font-size: 1rem;
+      font-weight: 900;
+      color: #fff;
+    }
+
+    .resource-title {
+      font-size: 0.9rem;
+      font-weight: 700;
+    }
+
+    .resource-desc {
+      font-size: 0.75rem;
+      color: rgba(255,255,255,0.45);
+      margin-top: 0.1rem;
+    }
+
+    /* ── Footer ───────────────────────────────── */
+    .nu-footer {
+      flex-shrink: 0;
+      background: #111;
+      padding: 0.6rem 1.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1.25rem;
+    }
+
+    .nu-footer img { height: 24px; width: auto; opacity: 0.7; }
+
+    .nu-footer-text {
+      font-family: 'Lato', sans-serif;
+      font-size: 0.75rem;
+      color: rgba(255,255,255,0.35);
+    }
+
+    .nu-footer-text a { color: var(--nu-red); text-decoration: none; }
+
+    @media (max-width: 640px) {
+      .hero { grid-template-columns: 1fr; }
+      .hero-left { padding: 1.5rem; }
+      .hero-right { display: none; }
+      .nu-bar-links { display: none; }
+      .nu-bar img { height: 30px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Identity bar -->
+  <div class="nu-bar">
+    <img src="assets/logos/nu-logo-dark.png" alt="Northeastern University">
+    <nav class="nu-bar-links">
+      <a href="index.html">Project Gallery</a>
+      <a href="staff.html">Course Staff</a>
+      <a href="https://khoury.northeastern.edu" target="_blank" rel="noopener">Khoury College</a>
+    </nav>
+  </div>
+
+  <!-- Hero -->
+  <div class="hero">
+    <div class="hero-left">
+      <p class="hero-eyebrow">Khoury College of Computer Sciences</p>
+      <h1 class="hero-title">CS 6180 —<br><span>Generative AI</span></h1>
+      <p class="hero-subtitle">An advanced graduate course exploring foundation models, large language models, diffusion systems, and the frontiers of AI-generated content.</p>
+      <div class="hero-meta">
+        <div class="hero-meta-item"><label>Term</label><span>Spring 2026</span></div>
+        <div class="hero-meta-item"><label>Instructor</label><span>Prof. Ryan Rad</span></div>
+        <div class="hero-meta-item"><label>Credits</label><span>4 SH</span></div>
+        <div class="hero-meta-item"><label>College</label><span>Khoury College</span></div>
+      </div>
+    </div>
+
+    <div class="hero-right">
+      <div class="hero-right-label">Course Resources</div>
+
+      <a class="resource-card" href="index.html">
+        <div class="resource-icon">&#9783;</div>
+        <div>
+          <div class="resource-title">Project Gallery</div>
+          <div class="resource-desc">Browse all Spring 2026 student final projects.</div>
+        </div>
+      </a>
+
+      <a class="resource-card" href="staff.html">
+        <div class="resource-icon">&#9786;</div>
+        <div>
+          <div class="resource-title">Course Staff</div>
+          <div class="resource-desc">Meet the instructor and teaching assistants.</div>
+        </div>
+      </a>
+
+      <a class="resource-card" href="https://cs6180.ryanrad.org" target="_blank" rel="noopener">
+        <div class="resource-icon">&#8594;</div>
+        <div>
+          <div class="resource-title">Course Website</div>
+          <div class="resource-desc">Syllabus, schedule, assignments, and lecture notes.</div>
+        </div>
+      </a>
+
+      <a class="resource-card" href="https://khoury.northeastern.edu" target="_blank" rel="noopener">
+        <div class="resource-icon">N</div>
+        <div>
+          <div class="resource-title">Khoury College</div>
+          <div class="resource-desc">Khoury College of Computer Sciences, Northeastern.</div>
+        </div>
+      </a>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="nu-footer">
+    <img src="assets/logos/nu-logo-white.png" alt="Northeastern University">
+    <span class="nu-footer-text">&copy; 2026 Northeastern University &middot; CS 6180 Generative AI &middot; <a href="https://northeastern.edu" target="_blank" rel="noopener">northeastern.edu</a></span>
+  </footer>
+
+</body>
+</html>

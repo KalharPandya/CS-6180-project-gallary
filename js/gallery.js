@@ -10,7 +10,7 @@
   function renderCard(team) {
     const card = document.createElement('a');
     card.className = 'card';
-    card.href = `teams/${team.slug}/index.html`;
+    card.href = `teams/${team.slug}/`;
 
     const thumb = team.thumbnail
       ? `<img class="card-thumbnail" src="${team.thumbnail}" alt="${team.name}" loading="lazy">`
@@ -18,13 +18,19 @@
 
     const tags = (team.tags || []).map(t => `<span class="tag">${t}</span>`).join('');
 
+    const badges = [
+      team.poster ? `<span class="media-badge media-badge--poster" title="Poster available">PDF</span>` : '',
+      team.video  ? `<span class="media-badge media-badge--video"  title="Video available">&#9654; Video</span>` : ''
+    ].join('');
+
     card.innerHTML = `
       ${thumb}
       <div class="card-body">
         <div class="card-team">${team.name}</div>
         <div class="card-title">${team.title}</div>
         ${team.description ? `<div class="card-desc">${team.description}</div>` : ''}
-        ${tags ? `<div class="card-tags">${tags}</div>` : ''}
+        ${tags   ? `<div class="card-tags">${tags}</div>` : ''}
+        ${badges ? `<div class="card-media-badges">${badges}</div>` : ''}
       </div>
     `;
     return card;
@@ -32,7 +38,7 @@
 
   function renderGallery(teams) {
     gallery.innerHTML = '';
-    if (teams.length === 0) {
+    if (!teams.length) {
       gallery.innerHTML = `
         <div class="empty-state">
           <h2>No projects found</h2>
@@ -43,8 +49,8 @@
     teams.forEach(t => gallery.appendChild(renderCard(t)));
   }
 
-  function filterTeams(query) {
-    const q = query.toLowerCase().trim();
+  function filterTeams(q) {
+    q = q.toLowerCase().trim();
     if (!q) return allTeams;
     return allTeams.filter(t =>
       t.name.toLowerCase().includes(q) ||
@@ -55,19 +61,11 @@
     );
   }
 
-  searchInput.addEventListener('input', () => {
-    renderGallery(filterTeams(searchInput.value));
-  });
+  searchInput.addEventListener('input', () => renderGallery(filterTeams(searchInput.value)));
 
   fetch('teams/manifest.json')
-    .then(r => {
-      if (!r.ok) throw new Error(`HTTP ${r.status}`);
-      return r.json();
-    })
-    .then(teams => {
-      allTeams = teams;
-      renderGallery(allTeams);
-    })
+    .then(r => { if (!r.ok) throw new Error(); return r.json(); })
+    .then(teams => { allTeams = teams; renderGallery(allTeams); })
     .catch(() => {
       gallery.innerHTML = `
         <div class="empty-state">

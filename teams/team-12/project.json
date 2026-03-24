@@ -1,8 +1,14 @@
 {
-  "name": "Masters of AI",
-  "title": "Untitled Project",
-  "members": [],
+  "name": "Team 12",
+  "title": "RAGs for Trading: Evaluating Retrieval-Augmented Generation for Structured Financial Signal Analysis",
+  "members": [
+    "Ricky Lee",
+    "Tarun Badarvada",
+    "Dina Barua"
+  ],
   "description": "",
   "thumbnail": "assets/thumbnail.png",
+  "poster": "assets/poster.pdf",
+  "video": "assets/video.mp4",
   "tags": []
 }

@@ -1,0 +1,181 @@
+/* Staff Page — 16:9 single-viewport layout */
+
+/* Back nav */
+.staff-nav {
+  flex-shrink: 0;
+  max-width: 100%;
+  padding: 0.5rem 1.5rem;
+  display: flex;
+  gap: 1.5rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.staff-nav a {
+  color: var(--nu-red);
+  text-decoration: none;
+  font-size: 0.82rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.staff-nav a:hover {
+  text-decoration: underline;
+}
+
+/* ── Main canvas: fills remaining viewport height ── */
+.staff-canvas {
+  flex: 1;
+  min-height: 0;
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  gap: 0;
+}
+
+/* ── Columns ──────────────────────────────────────── */
+.staff-col {
+  display: flex;
+  flex-direction: column;
+  padding: 1.5rem 2rem;
+  min-height: 0;
+  overflow: hidden;
+}
+
+.staff-col--instructor {
+  border-right: 1px solid var(--border);
+  background: var(--bg-card);
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.staff-col--tas {
+  background: var(--bg);
+  justify-content: center;
+}
+
+/* ── Section title ─────────────────────────────────── */
+.staff-section-title {
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--text-muted);
+  margin-bottom: 1.25rem;
+  padding-bottom: 0.4rem;
+  border-bottom: 2px solid var(--nu-red);
+  width: 100%;
+}
+
+/* ── Card ──────────────────────────────────────────── */
+.staff-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 1.5rem 1rem 1.25rem;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.staff-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-hover);
+}
+
+/* ── Circular photo — scales with viewport height ── */
+.staff-photo-wrap {
+  width: clamp(72px, 12vh, 130px);
+  height: clamp(72px, 12vh, 130px);
+  border-radius: 50%;
+  overflow: hidden;
+  margin-bottom: 0.9rem;
+  border: 3px solid var(--nu-red);
+  flex-shrink: 0;
+}
+
+.staff-photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
+}
+
+/* ── Card body ─────────────────────────────────────── */
+.staff-body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.35rem;
+  width: 100%;
+}
+
+.staff-name-row {
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  gap: 0.4rem;
+  flex-wrap: wrap;
+}
+
+.staff-name {
+  font-size: clamp(0.85rem, 1.4vh, 1.1rem);
+  font-weight: 700;
+  color: var(--text);
+}
+
+.staff-pronouns {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+}
+
+/* ── Role badge ────────────────────────────────────── */
+.staff-role {
+  display: inline-block;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 0.2rem 0.65rem;
+  border-radius: 2px;
+}
+
+.staff-role--instructor {
+  background: var(--nu-black);
+  color: #fff;
+}
+
+.staff-role--ta {
+  background: var(--nu-red);
+  color: #fff;
+}
+
+/* ── TA row: 3 cards side by side ──────────────────── */
+.ta-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.25rem;
+  width: 100%;
+}
+
+/* ─── Responsive ──────────────────────────────── */
+@media (max-width: 640px) {
+  .staff-canvas {
+    grid-template-columns: 1fr;
+  }
+  .staff-col--instructor {
+    border-right: none;
+    border-bottom: 1px solid var(--border);
+  }
+}
+
+@media (max-width: 640px) {
+  .ta-row {
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  }
+}

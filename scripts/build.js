@@ -37,6 +37,8 @@ function buildManifest() {
       members: meta.members || [],
       description: meta.description || '',
       thumbnail: hasThumbnail ? `teams/${slug}/${thumbnailRel}` : null,
+      poster: meta.poster || null,
+      video: meta.video || null,
       tags: meta.tags || []
     });
   }

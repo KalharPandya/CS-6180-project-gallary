@@ -1,7 +1,20 @@
 {
   "permissions": {
     "allow": [
-      "WebSearch"
+      "WebSearch",
+      "WebFetch(domain:brand.northeastern.edu)",
+      "WebFetch(domain:www.brandcolorcode.com)",
+      "WebFetch(domain:northeastern.edu)",
+      "WebFetch(domain:www.northeastern.edu)",
+      "WebFetch(domain:cs6180.ryanrad.org)",
+      "WebFetch(domain:khoury.northeastern.edu)",
+      "WebFetch(domain:s44427.pcdn.co)",
+      "Bash(python3 -c \":*)",
+      "Bash(node -e \":*)",
+      "Bash(node scripts/build.js)",
+      "Bash(node scripts/create-teams.js)",
+      "Bash(node -e \"const m=require\\(''./teams/manifest.json''\\); console.log\\(''Total entries:'', m.length\\); const real=m.filter\\(t=>t.slug.match\\(/^team-\\\\d+$/\\)\\); console.log\\(''team-NN entries:'', real.length\\); real.forEach\\(t=>console.log\\(t.slug, ''|'', t.name, ''|'', t.title.slice\\(0,50\\)\\)\\)\")",
+      "mcp__Claude_Preview__preview_start"
     ]
   }
 }

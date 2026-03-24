@@ -132,6 +132,8 @@ function generateBoilerplate(slug, name, title, projectType) {
     members: [],
     description: '',
     thumbnail: 'assets/thumbnail.png',
+    poster: 'assets/poster.pdf',
+    video: 'assets/video.mp4',
     tags: []
   };
   const metaPath = path.join(targetDir, 'project.json');

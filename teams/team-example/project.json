@@ -7,6 +7,8 @@
   ],
   "description": "One-line description for the gallery card.",
   "thumbnail": "assets/thumbnail.png",
+  "poster": "assets/poster.pdf",
+  "video": "assets/video.mp4",
   "tags": [
     "tag1",
     "tag2"

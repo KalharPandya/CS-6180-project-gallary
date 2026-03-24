@@ -1,0 +1,304 @@
+/* ─── Full-page project viewer ────────────────────────────────
+   Used by teams/{slug}/index.html — loaded alongside main.css
+   ─────────────────────────────────────────────────────────── */
+
+body { background: #000; }
+
+/* ─── Page wrapper ─── */
+.viewer-page {
+  flex: 1;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ─── Header ─── */
+.viewer-header {
+  flex-shrink: 0;
+  background: #000;
+  border-bottom: 2px solid var(--nu-red);
+  padding: 0.5rem 1.25rem;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.viewer-back {
+  color: rgba(255,255,255,0.55);
+  text-decoration: none;
+  font-family: 'Lato', sans-serif;
+  font-size: clamp(0.65rem, 1.1vw, 0.8rem);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  padding: 0.25rem 0.65rem;
+  border: 1px solid rgba(255,255,255,0.2);
+  border-radius: 2px;
+  white-space: nowrap;
+  transition: color 0.15s, border-color 0.15s;
+  flex-shrink: 0;
+}
+.viewer-back:hover { color: #fff; border-color: rgba(255,255,255,0.5); }
+
+.viewer-nu-logo {
+  height: clamp(22px, 3.5vh, 34px);
+  width: auto;
+  flex-shrink: 0;
+  opacity: 0.9;
+}
+
+.viewer-title {
+  flex: 1;
+  color: #fff;
+  font-family: 'Lato', sans-serif;
+  font-weight: 700;
+  font-size: clamp(0.75rem, 1.5vw, 1rem);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.viewer-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  flex-shrink: 0;
+}
+
+.viewer-tab {
+  padding: 0.28rem clamp(0.5rem, 1.2vw, 1rem);
+  border: 2px solid var(--nu-red);
+  border-radius: 2px;
+  background: transparent;
+  color: rgba(255,255,255,0.5);
+  font-family: 'Lato', sans-serif;
+  font-weight: 700;
+  font-size: clamp(0.62rem, 1.1vw, 0.8rem);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  cursor: pointer;
+  transition: background 0.15s, color 0.15s;
+  white-space: nowrap;
+}
+.viewer-tab.active,
+.viewer-tab:hover:not(:disabled) { background: var(--nu-red); color: #fff; }
+.viewer-tab:disabled { opacity: 0.25; cursor: not-allowed; border-color: #444; }
+
+/* ─── Body ─── */
+.viewer-body {
+  flex: 1;
+  position: relative;
+  min-height: 0;
+  overflow: hidden;
+  background: #000;
+}
+
+/* ─── Main area ─── */
+.viewer-main {
+  position: absolute;
+  inset: 0;
+  display: flex;
+}
+
+/* ─── Panels (overlay in non-split modes) ─── */
+.viewer-panel {
+  position: absolute;
+  inset: 0;
+  display: none;
+  overflow: hidden;
+}
+
+.viewer-body.mode-default .viewer-panel--poster,
+.viewer-body.mode-poster  .viewer-panel--poster,
+.viewer-body.mode-swapped .viewer-panel--video,
+.viewer-body.mode-video   .viewer-panel--video {
+  display: block;
+}
+
+/* ─── PDF embed ─── */
+.viewer-pdf {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+/* ─── Video wrap ─── */
+.viewer-panel .video-wrap {
+  position: absolute;
+  inset: 0;
+}
+
+.viewer-video {
+  width: 100%;
+  height: 100%;
+  border: none;
+  display: block;
+  object-fit: contain;
+  background: #000;
+  cursor: pointer;
+}
+
+/* ─── Custom play button overlay ─── */
+.video-play-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+  transition: opacity 0.25s;
+}
+.video-play-overlay.v-playing { opacity: 0; }
+
+.video-play-btn {
+  pointer-events: all;
+  background: none;
+  border: none;
+  cursor: pointer;
+  width: clamp(56px, 10vw, 88px);
+  height: clamp(56px, 10vw, 88px);
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0.85;
+  transition: opacity 0.15s, transform 0.15s;
+}
+.video-play-btn:hover { opacity: 1; transform: scale(1.1); }
+.video-play-btn svg   { width: 100%; height: 100%; }
+.video-play-overlay.v-playing .video-play-btn { pointer-events: none; }
+
+/* ─── PiP panel ─── */
+.viewer-pip {
+  position: absolute;
+  bottom: 1rem;
+  right: 1rem;
+  width: clamp(180px, 22vw, 360px);
+  aspect-ratio: 16 / 9;
+  z-index: 20;
+  border: 2px solid var(--nu-red);
+  border-radius: 6px;
+  overflow: hidden;
+  box-shadow: 0 6px 28px rgba(0,0,0,0.7);
+  display: flex;
+  flex-direction: column;
+  transition: width 0.2s, box-shadow 0.2s;
+}
+.viewer-pip[hidden] { display: none; }
+
+/* Expanded (maximized) pip */
+.viewer-pip.pip-expanded {
+  width: clamp(280px, 42vw, 620px);
+}
+.viewer-pip.pip-dragging {
+  cursor: grabbing !important;
+  box-shadow: 0 12px 40px rgba(0,0,0,0.85);
+  opacity: 0.95;
+}
+
+/* Dragbar row: [maximize] [drag-zone] [swap] */
+.viewer-pip-dragbar {
+  flex-shrink: 0;
+  height: 24px;
+  background: rgba(200,16,46,0.85);
+  display: flex;
+  align-items: center;
+  padding: 0 0.25rem;
+  gap: 0.2rem;
+}
+
+/* Centre stretch — this is what you grab to drag */
+.pip-drag-zone {
+  flex: 1;
+  height: 100%;
+  cursor: grab;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.pip-drag-zone::before {
+  content: '';
+  display: block;
+  width: 28px;
+  height: 3px;
+  background: rgba(255,255,255,0.5);
+  border-radius: 2px;
+}
+.pip-drag-zone:active { cursor: grabbing; }
+
+/* PiP content area */
+.viewer-pip-inner {
+  flex: 1;
+  position: relative;
+  min-height: 0;
+  background: #000;
+}
+
+.viewer-pip-pdf,
+.viewer-pip-video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+  display: none;
+}
+.viewer-pip-video { object-fit: contain; background: #000; }
+
+/* Show correct PiP content per mode */
+.viewer-body.mode-default .viewer-pip-video,
+.viewer-body.mode-poster  .viewer-pip-video { display: block; }
+.viewer-body.mode-swapped .viewer-pip-pdf   { display: block; }
+
+/* PiP play overlay (smaller play button) */
+.viewer-pip-inner .pip-play-overlay .video-play-btn {
+  width: clamp(36px, 7vw, 56px);
+  height: clamp(36px, 7vw, 56px);
+}
+
+/* Maximize + swap buttons live inside the dragbar */
+.viewer-pip-maximize,
+.viewer-pip-swap {
+  flex-shrink: 0;
+  background: rgba(0,0,0,0.35);
+  border: 1px solid rgba(255,255,255,0.25);
+  color: #fff;
+  font-size: 0.85rem;
+  line-height: 1;
+  padding: 0.18rem 0.32rem;
+  border-radius: 2px;
+  cursor: pointer;
+  transition: background 0.15s;
+  white-space: nowrap;
+}
+.viewer-pip-maximize:hover,
+.viewer-pip-swap:hover { background: rgba(0,0,0,0.7); }
+
+/* PiP resize handle (bottom-right corner) */
+.viewer-pip-resize {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 18px;
+  height: 18px;
+  cursor: nwse-resize;
+  z-index: 6;
+  background: linear-gradient(135deg, transparent 40%, rgba(255,255,255,0.35) 40%);
+}
+.viewer-pip-resize::after {
+  content: '';
+  position: absolute;
+  bottom: 3px;
+  right: 3px;
+  width: 6px;
+  height: 6px;
+  border-right: 2px solid rgba(255,255,255,0.5);
+  border-bottom: 2px solid rgba(255,255,255,0.5);
+}
+
+/* ─── Narrow viewport ─── */
+@media (max-width: 600px) {
+  .viewer-back .back-label { display: none; }
+}

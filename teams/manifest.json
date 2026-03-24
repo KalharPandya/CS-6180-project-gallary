@@ -9,6 +9,8 @@
     ],
     "description": "Custom HTML written directly in index.html, using the shared project stylesheet but no markdown loader.",
     "thumbnail": "teams/demo-custom-html/assets/thumbnail.svg",
+    "poster": null,
+    "video": null,
     "tags": [
       "gan",
       "generative-art",
@@ -26,6 +28,8 @@
     ],
     "description": "Fully self-contained page with its own embedded CSS and JS — zero dependencies on shared site files.",
     "thumbnail": "teams/demo-full-custom/assets/thumbnail.svg",
+    "poster": null,
+    "video": null,
     "tags": [
       "nlp",
       "interactive",
@@ -42,6 +46,8 @@
     ],
     "description": "An image-only project page — a single research poster displayed full width.",
     "thumbnail": "teams/demo-image-only/assets/poster.png",
+    "poster": null,
+    "video": null,
     "tags": [
       "transformers",
       "visualization",
@@ -59,6 +65,8 @@
     ],
     "description": "A markdown-only report demonstrating text, tables, code blocks, and local images rendered from README.md.",
     "thumbnail": "teams/demo-markdown-only/assets/thumbnail.svg",
+    "poster": null,
+    "video": null,
     "tags": [
       "reinforcement-learning",
       "robotics",
@@ -75,6 +83,8 @@
     ],
     "description": "A video-only project page with a YouTube embed and minimal surrounding context.",
     "thumbnail": "teams/demo-video-only/assets/thumbnail.svg",
+    "poster": null,
+    "video": null,
     "tags": [
       "computer-vision",
       "object-detection",
@@ -82,12 +92,482 @@
     ]
   },
   {
-    "slug": "team-12",
-    "name": "Masters of AI",
-    "title": "Untitled Project",
-    "members": [],
+    "slug": "team-01",
+    "name": "Team 01",
+    "title": "Automating vehicle damage assessment in the insurance industry",
+    "members": [
+      "Vishwajeet Hogale",
+      "Anjali Pai",
+      "Nitya Ravi"
+    ],
+    "description": "Sample team project for validating the poster and video viewer.",
+    "thumbnail": "teams/team-01/assets/thumbnail.png",
+    "poster": "assets/poster.pdf",
+    "video": "assets/video.mp4",
+    "tags": [
+      "generative-ai",
+      "sample"
+    ]
+  },
+  {
+    "slug": "team-02",
+    "name": "Team 02",
+    "title": "Evaluating Hallucination Detection in Financial RAG",
+    "members": [
+      "Rudrajit Banerjee",
+      "Bijin Chakraborty",
+      "Mirat Shah"
+    ],
     "description": "",
     "thumbnail": null,
+    "poster": "assets/poster.pdf",
+    "video": "assets/video.mp4",
+    "tags": []
+  },
+  {
+    "slug": "team-03",
+    "name": "Team 03",
+    "title": "Evaluating Hallucination Behavior in Retrieval-Augmented Generation Systems",
+    "members": [
+      "Arzoo Jiwani",
+      "Rahul Abhijit Kulkarni",
+      "Yashi Chawla"
+    ],
+    "description": "",
+    "thumbnail": null,
+    "poster": "assets/poster.pdf",
+    "video": "assets/video.mp4",
+    "tags": []
+  },
+  {
+    "slug": "team-04",
+    "name": "Team 04",
+    "title": "Comparative Study of Classical, Graph-Based, and LLM-Guided Video Summarization on TVSum and SumMe",
+    "members": [
+      "Hariharan Chandrasekar",
+      "Niranjan Sathish",
+      "Saumith Devarasetty"
+    ],
+    "description": "",
+    "thumbnail": null,
+    "poster": "assets/poster.pdf",
+    "video": "assets/video.mp4",
+    "tags": []
+  },
+  {
+    "slug": "team-05",
+    "name": "Team 05",
+    "title": "FinChartAudit: Detecting Misleading Financial Charts with Vision-Language Models and Textual Grounding",
+    "members": [
+      "Mengshan Li",
+      "Wenshuang Zhou",
+      "Tong Wu"
+    ],
+    "description": "",
+    "thumbnail": null,
+    "poster": "assets/poster.pdf",
+    "video": "assets/video.mp4",
+    "tags": []
+  },
+  {
+    "slug": "team-06",
+    "name": "Team 06",
+    "title": "Comparing Prompting Strategies for Automatic Educational Quiz Generation",
+    "members": [
+      "Mengru Li",
+      "Difan Xie",
+      "Sizhi Chen"
+    ],
+    "description": "",
+    "thumbnail": null,
+    "poster": "assets/poster.pdf",
+    "video": "assets/video.mp4",
+    "tags": []
+  },
+  {
+    "slug": "team-07",
+    "name": "Team 07",
+    "title": "MarketLens: Turning Financial News into Actionable Market Intelligence",
+    "members": [
+      "Anandavardhana Hegde",
+      "Yogesh Thakku Suresh",
+      "Ayush Sharma"
+    ],
+    "description": "",
+    "thumbnail": null,
+    "poster": "assets/poster.pdf",
+    "video": "assets/video.mp4",
+    "tags": []
+  },
+  {
+    "slug": "team-08",
+    "name": "Team 08",
+    "title": "Agentic RAG: Evaluating Tool Routing Accuracy Under Prompt Ambiguity",
+    "members": [
+      "Parin Shah",
+      "Henil Himanshukumar Patel",
+      "Heta Milan Shah"
+    ],
+    "description": "",
+    "thumbnail": null,
+    "poster": "assets/poster.pdf",
+    "video": "assets/video.mp4",
+    "tags": []
+  },
+  {
+    "slug": "team-09",
+    "name": "Team 09",
+    "title": "FinAgent: Multi-Agent System for Automated Financial Risk Screening",
+    "members": [
+      "Sumit Kanu",
+      "Om Mane",
+      "Sharan Giri"
+    ],
+    "description": "",
+    "thumbnail": null,
+    "poster": "assets/poster.pdf",
+    "video": "assets/video.mp4",
+    "tags": []
+  },
+  {
+    "slug": "team-10",
+    "name": "Team 10",
+    "title": "LLM Agent Self-Correction: Do Agents Actually Fix Their Mistakes?",
+    "members": [
+      "Manav Kamleshbhai Dhamani",
+      "Shrey Babulal Patel",
+      "Aditya Chatterjee"
+    ],
+    "description": "",
+    "thumbnail": null,
+    "poster": "assets/poster.pdf",
+    "video": "assets/video.mp4",
+    "tags": []
+  },
+  {
+    "slug": "team-11",
+    "name": "Team 11",
+    "title": "Detecting Hallucination in Large Language Models via Internal Circuit Activations",
+    "members": [
+      "Siddhartha Roy",
+      "Akshita Singh",
+      "Prabesh Paudel"
+    ],
+    "description": "",
+    "thumbnail": null,
+    "poster": "assets/poster.pdf",
+    "video": "assets/video.mp4",
+    "tags": []
+  },
+  {
+    "slug": "team-12",
+    "name": "Team 12",
+    "title": "RAGs for Trading: Evaluating Retrieval-Augmented Generation for Structured Financial Signal Analysis",
+    "members": [
+      "Ricky Lee",
+      "Tarun Badarvada",
+      "Dina Barua"
+    ],
+    "description": "",
+    "thumbnail": null,
+    "poster": "assets/poster.pdf",
+    "video": "assets/video.mp4",
+    "tags": []
+  },
+  {
+    "slug": "team-13",
+    "name": "Team 13",
+    "title": "Beyond Naive RAG: Progressive Retrieval Enhancements and Adversarial Verification for Faithful Legal AI",
+    "members": [
+      "Sri Ram Sathiya Narayanan",
+      "Mohammed Ahnaf Tajwar",
+      "Sivapriya Sugumaran"
+    ],
+    "description": "",
+    "thumbnail": null,
+    "poster": "assets/poster.pdf",
+    "video": "assets/video.mp4",
+    "tags": []
+  },
+  {
+    "slug": "team-14",
+    "name": "Team 14",
+    "title": "Lost in Simplification: Detecting Safety-Critical Errors in LLM-Generated Medication Instructions",
+    "members": [
+      "Rohit Abhijit Kulkarni",
+      "Atharv Talnikar",
+      "Christopher Huitt"
+    ],
+    "description": "",
+    "thumbnail": null,
+    "poster": "assets/poster.pdf",
+    "video": "assets/video.mp4",
+    "tags": []
+  },
+  {
+    "slug": "team-15",
+    "name": "Team 15",
+    "title": "AI Financial Document Analyzer: Generating Spending Insights Using Retrieval-Augmented Generation",
+    "members": [
+      "Calvin Kim",
+      "Takara Truong",
+      "Chimiddorj Ulziisaikhan"
+    ],
+    "description": "",
+    "thumbnail": null,
+    "poster": "assets/poster.pdf",
+    "video": "assets/video.mp4",
+    "tags": []
+  },
+  {
+    "slug": "team-16",
+    "name": "Team 16",
+    "title": "Selective Debate-Augmented RAG: Efficient Hallucination Detection via Asymmetric Agents and DSPy-Optimized Adjudication",
+    "members": [
+      "Shrivarshini Narayanan",
+      "Shivam Singh",
+      "Bhanu Harsha Yanamadala"
+    ],
+    "description": "",
+    "thumbnail": null,
+    "poster": "assets/poster.pdf",
+    "video": "assets/video.mp4",
+    "tags": []
+  },
+  {
+    "slug": "team-17",
+    "name": "Team 17",
+    "title": "Agentic Data Analysis",
+    "members": [
+      "Jicheng Li",
+      "Ziyue Shen",
+      "Nathanael Chiang"
+    ],
+    "description": "",
+    "thumbnail": null,
+    "poster": "assets/poster.pdf",
+    "video": "assets/video.mp4",
+    "tags": []
+  },
+  {
+    "slug": "team-18",
+    "name": "Team 18",
+    "title": "Does Fine-Tuning Make Small LLMs More Robust? Testing Tool-Calling and Fault Recovery in Gemma 2B vs. Phi-3 Mini",
+    "members": [
+      "Sam Selvaraj",
+      "Jatan Nitesh Patel",
+      "Silas Bates"
+    ],
+    "description": "",
+    "thumbnail": null,
+    "poster": "assets/poster.pdf",
+    "video": "assets/video.mp4",
+    "tags": []
+  },
+  {
+    "slug": "team-19",
+    "name": "Team 19",
+    "title": "Evaluating an Automated Generative AI Pipeline for News-to-Video Creation",
+    "members": [
+      "Ran Zhao",
+      "Xiaofan Guo",
+      "Zhuoren Zhou"
+    ],
+    "description": "",
+    "thumbnail": null,
+    "poster": "assets/poster.pdf",
+    "video": "assets/video.mp4",
+    "tags": []
+  },
+  {
+    "slug": "team-20",
+    "name": "Team 20",
+    "title": "FinSearch: Intent-Aware Financial Document Intelligence",
+    "members": [
+      "Moumita Baidya",
+      "Nidhi Vinodbhai Patel",
+      "Kirubhaharan Joseph Abraham"
+    ],
+    "description": "",
+    "thumbnail": null,
+    "poster": "assets/poster.pdf",
+    "video": "assets/video.mp4",
+    "tags": []
+  },
+  {
+    "slug": "team-21",
+    "name": "Team 21",
+    "title": "Beyond Semantics: Bridging the Gap in Mental Health Dialogue via Emotion-Driven RAG and Safety Guardrails",
+    "members": [
+      "Chenchen Feng",
+      "Wenwen Han",
+      "Vesper Wang"
+    ],
+    "description": "",
+    "thumbnail": null,
+    "poster": "assets/poster.pdf",
+    "video": "assets/video.mp4",
+    "tags": []
+  },
+  {
+    "slug": "team-22",
+    "name": "Team 22",
+    "title": "Comparative Study of Vision Language Models for Multimodal Fashion Search",
+    "members": [
+      "Aatmaj Amol Salunke",
+      "Chandan Gowda Keelara Shivanna",
+      "Sai Ritish Reddy Musku"
+    ],
+    "description": "",
+    "thumbnail": null,
+    "poster": "assets/poster.pdf",
+    "video": "assets/video.mp4",
+    "tags": []
+  },
+  {
+    "slug": "team-23",
+    "name": "Team 23",
+    "title": "Macroeconomic research synthesis with Gen AI",
+    "members": [
+      "Tianyiru Chen",
+      "Christopher Gormley",
+      "Sean Ando"
+    ],
+    "description": "",
+    "thumbnail": null,
+    "poster": "assets/poster.pdf",
+    "video": "assets/video.mp4",
+    "tags": []
+  },
+  {
+    "slug": "team-24",
+    "name": "Team 24",
+    "title": "Sensor-Aware Vision-Language Model Prompting for Accessible Scene Description",
+    "members": [
+      "Yixi Jin",
+      "Pauline Truong",
+      "Tianze Yin"
+    ],
+    "description": "",
+    "thumbnail": null,
+    "poster": "assets/poster.pdf",
+    "video": "assets/video.mp4",
+    "tags": []
+  },
+  {
+    "slug": "team-25",
+    "name": "Team 25",
+    "title": "Evaluating Temporal and Source-Aware RAG in Dynamic Knowledge Environments",
+    "members": [
+      "Walgama Kankanamge Ashen De Silva",
+      "Nicholas Tietje",
+      "Katie Elyse Song"
+    ],
+    "description": "",
+    "thumbnail": null,
+    "poster": "assets/poster.pdf",
+    "video": "assets/video.mp4",
+    "tags": []
+  },
+  {
+    "slug": "team-26",
+    "name": "Team 26",
+    "title": "From Dialogue to Data: Converting Patient-Doctor Conversations into SQL-Compatible Clinical Notes",
+    "members": [
+      "Bridget Leary",
+      "Elisabeth Sluchak",
+      "Priyam Bhardwaj"
+    ],
+    "description": "",
+    "thumbnail": null,
+    "poster": "assets/poster.pdf",
+    "video": "assets/video.mp4",
+    "tags": []
+  },
+  {
+    "slug": "team-27",
+    "name": "Team 27",
+    "title": "Renters Legal Assistance Chatbot",
+    "members": [
+      "Maxwell Berry",
+      "En-Ping Su"
+    ],
+    "description": "",
+    "thumbnail": null,
+    "poster": "assets/poster.pdf",
+    "video": "assets/video.mp4",
+    "tags": []
+  },
+  {
+    "slug": "team-28",
+    "name": "Team 28",
+    "title": "Generative Engine Optimization: Measuring and Improving Brand Visibility Across LLM Platforms",
+    "members": [
+      "Uday Sonawane",
+      "Divit Pratap Singh"
+    ],
+    "description": "",
+    "thumbnail": null,
+    "poster": "assets/poster.pdf",
+    "video": "assets/video.mp4",
+    "tags": []
+  },
+  {
+    "slug": "team-29",
+    "name": "Team 29",
+    "title": "A RAG-Powered Intelligent Guide for Local Discovery",
+    "members": [
+      "Jeffrey Chen",
+      "Sai Manichandana Devi Thumati",
+      "Vishal Kumar"
+    ],
+    "description": "",
+    "thumbnail": null,
+    "poster": "assets/poster.pdf",
+    "video": "assets/video.mp4",
+    "tags": []
+  },
+  {
+    "slug": "team-30",
+    "name": "Team 30",
+    "title": "Exploring the Impact of the Domain Specific Embeddings on Retrieval Augmented Generation (RAG) Performance",
+    "members": [
+      "Sining Meng",
+      "Gokulraj Muthukumar",
+      "Deepashree Srinivasa Rao Rannore"
+    ],
+    "description": "",
+    "thumbnail": null,
+    "poster": "assets/poster.pdf",
+    "video": "assets/video.mp4",
+    "tags": []
+  },
+  {
+    "slug": "team-31",
+    "name": "Team 31",
+    "title": "PaperPilot: Multi-Agent Research Assistant",
+    "members": [
+      "Justin Trinh",
+      "Ankith Seethesh Vaidya",
+      "Sunidi Vijayakrishna Kumar"
+    ],
+    "description": "",
+    "thumbnail": null,
+    "poster": "assets/poster.pdf",
+    "video": "assets/video.mp4",
+    "tags": []
+  },
+  {
+    "slug": "team-32",
+    "name": "Team 32",
+    "title": "Optimizing LLM-Generated Assessments",
+    "members": [
+      "Shantanu Shashank Dharmadhikari"
+    ],
+    "description": "",
+    "thumbnail": null,
+    "poster": "assets/poster.pdf",
+    "video": "assets/video.mp4",
     "tags": []
   },
   {
@@ -100,6 +580,8 @@
     ],
     "description": "One-line description for the gallery card.",
     "thumbnail": null,
+    "poster": "assets/poster.pdf",
+    "video": "assets/video.mp4",
     "tags": [
       "tag1",
       "tag2"
