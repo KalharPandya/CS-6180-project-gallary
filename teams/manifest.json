@@ -102,7 +102,7 @@
     ],
     "description": "Sample team project for validating the poster and video viewer.",
     "thumbnail": "teams/team-01/assets/thumbnail.png",
-    "poster": "assets/poster.pdf",
+    "poster": "assets/poster.png",
     "video": "assets/video.mp4",
     "tags": [
       "generative-ai",
@@ -119,8 +119,8 @@
       "Mirat Shah"
     ],
     "description": "",
-    "thumbnail": null,
-    "poster": "assets/poster.pdf",
+    "thumbnail": "teams/team-02/assets/thumbnail.png",
+    "poster": "assets/poster.png",
     "video": "assets/video.mp4",
     "tags": []
   },
@@ -134,8 +134,8 @@
       "Yashi Chawla"
     ],
     "description": "",
-    "thumbnail": null,
-    "poster": "assets/poster.pdf",
+    "thumbnail": "teams/team-03/assets/thumbnail.png",
+    "poster": "assets/poster.png",
     "video": "assets/video.mp4",
     "tags": []
   },
@@ -149,8 +149,8 @@
       "Saumith Devarasetty"
     ],
     "description": "",
-    "thumbnail": null,
-    "poster": "assets/poster.pdf",
+    "thumbnail": "teams/team-04/assets/thumbnail.png",
+    "poster": "assets/poster.png",
     "video": "assets/video.mp4",
     "tags": []
   },
@@ -164,8 +164,8 @@
       "Tong Wu"
     ],
     "description": "",
-    "thumbnail": null,
-    "poster": "assets/poster.pdf",
+    "thumbnail": "teams/team-05/assets/thumbnail.png",
+    "poster": "assets/poster.png",
     "video": "assets/video.mp4",
     "tags": []
   },
@@ -179,8 +179,8 @@
       "Sizhi Chen"
     ],
     "description": "",
-    "thumbnail": null,
-    "poster": "assets/poster.pdf",
+    "thumbnail": "teams/team-06/assets/thumbnail.png",
+    "poster": "assets/poster.png",
     "video": "assets/video.mp4",
     "tags": []
   },
@@ -194,8 +194,8 @@
       "Ayush Sharma"
     ],
     "description": "",
-    "thumbnail": null,
-    "poster": "assets/poster.pdf",
+    "thumbnail": "teams/team-07/assets/thumbnail.png",
+    "poster": "assets/poster.png",
     "video": "assets/video.mp4",
     "tags": []
   },
@@ -209,8 +209,8 @@
       "Heta Milan Shah"
     ],
     "description": "",
-    "thumbnail": null,
-    "poster": "assets/poster.pdf",
+    "thumbnail": "teams/team-08/assets/thumbnail.png",
+    "poster": "assets/poster.png",
     "video": "assets/video.mp4",
     "tags": []
   },
@@ -224,8 +224,8 @@
       "Sharan Giri"
     ],
     "description": "",
-    "thumbnail": null,
-    "poster": "assets/poster.pdf",
+    "thumbnail": "teams/team-09/assets/thumbnail.png",
+    "poster": "assets/poster.png",
     "video": "assets/video.mp4",
     "tags": []
   },
@@ -239,8 +239,8 @@
       "Aditya Chatterjee"
     ],
     "description": "",
-    "thumbnail": null,
-    "poster": "assets/poster.pdf",
+    "thumbnail": "teams/team-10/assets/thumbnail.png",
+    "poster": "assets/poster.png",
     "video": "assets/video.mp4",
     "tags": []
   },
@@ -254,8 +254,8 @@
       "Prabesh Paudel"
     ],
     "description": "",
-    "thumbnail": null,
-    "poster": "assets/poster.pdf",
+    "thumbnail": "teams/team-11/assets/thumbnail.png",
+    "poster": "assets/poster.png",
     "video": "assets/video.mp4",
     "tags": []
   },
@@ -269,8 +269,8 @@
       "Dina Barua"
     ],
     "description": "",
-    "thumbnail": null,
-    "poster": "assets/poster.pdf",
+    "thumbnail": "teams/team-12/assets/thumbnail.png",
+    "poster": "assets/poster.png",
     "video": "assets/video.mp4",
     "tags": []
   },
@@ -284,8 +284,8 @@
       "Sivapriya Sugumaran"
     ],
     "description": "",
-    "thumbnail": null,
-    "poster": "assets/poster.pdf",
+    "thumbnail": "teams/team-13/assets/thumbnail.png",
+    "poster": "assets/poster.png",
     "video": "assets/video.mp4",
     "tags": []
   },
@@ -299,8 +299,8 @@
       "Christopher Huitt"
     ],
     "description": "",
-    "thumbnail": null,
-    "poster": "assets/poster.pdf",
+    "thumbnail": "teams/team-14/assets/thumbnail.png",
+    "poster": "assets/poster.png",
     "video": "assets/video.mp4",
     "tags": []
   },
@@ -314,8 +314,8 @@
       "Chimiddorj Ulziisaikhan"
     ],
     "description": "",
-    "thumbnail": null,
-    "poster": "assets/poster.pdf",
+    "thumbnail": "teams/team-15/assets/thumbnail.png",
+    "poster": "assets/poster.png",
     "video": "assets/video.mp4",
     "tags": []
   },
@@ -329,8 +329,8 @@
       "Bhanu Harsha Yanamadala"
     ],
     "description": "",
-    "thumbnail": null,
-    "poster": "assets/poster.pdf",
+    "thumbnail": "teams/team-16/assets/thumbnail.png",
+    "poster": "assets/poster.png",
     "video": "assets/video.mp4",
     "tags": []
   },
@@ -344,8 +344,8 @@
       "Nathanael Chiang"
     ],
     "description": "",
-    "thumbnail": null,
-    "poster": "assets/poster.pdf",
+    "thumbnail": "teams/team-17/assets/thumbnail.png",
+    "poster": "assets/poster.png",
     "video": "assets/video.mp4",
     "tags": []
   },
@@ -359,8 +359,8 @@
       "Silas Bates"
     ],
     "description": "",
-    "thumbnail": null,
-    "poster": "assets/poster.pdf",
+    "thumbnail": "teams/team-18/assets/thumbnail.png",
+    "poster": "assets/poster.png",
     "video": "assets/video.mp4",
     "tags": []
   },
@@ -374,8 +374,8 @@
       "Zhuoren Zhou"
     ],
     "description": "",
-    "thumbnail": null,
-    "poster": "assets/poster.pdf",
+    "thumbnail": "teams/team-19/assets/thumbnail.png",
+    "poster": "assets/poster.png",
     "video": "assets/video.mp4",
     "tags": []
   },
@@ -389,8 +389,8 @@
       "Kirubhaharan Joseph Abraham"
     ],
     "description": "",
-    "thumbnail": null,
-    "poster": "assets/poster.pdf",
+    "thumbnail": "teams/team-20/assets/thumbnail.png",
+    "poster": "assets/poster.png",
     "video": "assets/video.mp4",
     "tags": []
   },
@@ -404,8 +404,8 @@
       "Vesper Wang"
     ],
     "description": "",
-    "thumbnail": null,
-    "poster": "assets/poster.pdf",
+    "thumbnail": "teams/team-21/assets/thumbnail.png",
+    "poster": "assets/poster.png",
     "video": "assets/video.mp4",
     "tags": []
   },
@@ -419,8 +419,8 @@
       "Sai Ritish Reddy Musku"
     ],
     "description": "",
-    "thumbnail": null,
-    "poster": "assets/poster.pdf",
+    "thumbnail": "teams/team-22/assets/thumbnail.png",
+    "poster": "assets/poster.png",
     "video": "assets/video.mp4",
     "tags": []
   },
@@ -434,8 +434,8 @@
       "Sean Ando"
     ],
     "description": "",
-    "thumbnail": null,
-    "poster": "assets/poster.pdf",
+    "thumbnail": "teams/team-23/assets/thumbnail.png",
+    "poster": "assets/poster.png",
     "video": "assets/video.mp4",
     "tags": []
   },
@@ -449,8 +449,8 @@
       "Tianze Yin"
     ],
     "description": "",
-    "thumbnail": null,
-    "poster": "assets/poster.pdf",
+    "thumbnail": "teams/team-24/assets/thumbnail.png",
+    "poster": "assets/poster.png",
     "video": "assets/video.mp4",
     "tags": []
   },
@@ -464,8 +464,8 @@
       "Katie Elyse Song"
     ],
     "description": "",
-    "thumbnail": null,
-    "poster": "assets/poster.pdf",
+    "thumbnail": "teams/team-25/assets/thumbnail.png",
+    "poster": "assets/poster.png",
     "video": "assets/video.mp4",
     "tags": []
   },
@@ -479,8 +479,8 @@
       "Priyam Bhardwaj"
     ],
     "description": "",
-    "thumbnail": null,
-    "poster": "assets/poster.pdf",
+    "thumbnail": "teams/team-26/assets/thumbnail.png",
+    "poster": "assets/poster.png",
     "video": "assets/video.mp4",
     "tags": []
   },
@@ -493,8 +493,8 @@
       "En-Ping Su"
     ],
     "description": "",
-    "thumbnail": null,
-    "poster": "assets/poster.pdf",
+    "thumbnail": "teams/team-27/assets/thumbnail.png",
+    "poster": "assets/poster.png",
     "video": "assets/video.mp4",
     "tags": []
   },
@@ -507,8 +507,8 @@
       "Divit Pratap Singh"
     ],
     "description": "",
-    "thumbnail": null,
-    "poster": "assets/poster.pdf",
+    "thumbnail": "teams/team-28/assets/thumbnail.png",
+    "poster": "assets/poster.png",
     "video": "assets/video.mp4",
     "tags": []
   },
@@ -522,8 +522,8 @@
       "Vishal Kumar"
     ],
     "description": "",
-    "thumbnail": null,
-    "poster": "assets/poster.pdf",
+    "thumbnail": "teams/team-29/assets/thumbnail.png",
+    "poster": "assets/poster.png",
     "video": "assets/video.mp4",
     "tags": []
   },
@@ -537,8 +537,8 @@
       "Deepashree Srinivasa Rao Rannore"
     ],
     "description": "",
-    "thumbnail": null,
-    "poster": "assets/poster.pdf",
+    "thumbnail": "teams/team-30/assets/thumbnail.png",
+    "poster": "assets/poster.png",
     "video": "assets/video.mp4",
     "tags": []
   },
@@ -552,8 +552,8 @@
       "Sunidi Vijayakrishna Kumar"
     ],
     "description": "",
-    "thumbnail": null,
-    "poster": "assets/poster.pdf",
+    "thumbnail": "teams/team-31/assets/thumbnail.png",
+    "poster": "assets/poster.png",
     "video": "assets/video.mp4",
     "tags": []
   },
@@ -565,8 +565,8 @@
       "Shantanu Shashank Dharmadhikari"
     ],
     "description": "",
-    "thumbnail": null,
-    "poster": "assets/poster.pdf",
+    "thumbnail": "teams/team-32/assets/thumbnail.png",
+    "poster": "assets/poster.png",
     "video": "assets/video.mp4",
     "tags": []
   },
