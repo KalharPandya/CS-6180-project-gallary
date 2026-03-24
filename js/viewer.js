@@ -73,6 +73,12 @@
 
     bodyEl.className = `viewer-body mode-${mode}`;
 
+    // Pause whichever video is about to be hidden
+    const mainVid = document.querySelector('.viewer-video');
+    const pipVid  = document.querySelector('.viewer-pip-video');
+    if (mode === 'poster' || mode === 'default') mainVid?.pause();
+    if (mode === 'video'  || mode === 'swapped') pipVid?.pause();
+
     // PiP: visible in default (video) + poster (video) + swapped (pdf)
     if (pipEl) {
       pipEl.hidden = !['default', 'poster', 'swapped'].includes(mode);
