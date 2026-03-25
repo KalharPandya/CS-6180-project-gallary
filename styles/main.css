@@ -318,6 +318,44 @@ body {
   }
 }
 
+/* ─── Floating Feedback Button ───────────────── */
+.feedback-fab {
+  position: fixed;
+  bottom: 1.5rem;
+  right: 1.5rem;
+  z-index: 300;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.65rem 1.1rem;
+  background: var(--nu-red);
+  color: #fff;
+  border-radius: 999px;
+  text-decoration: none;
+  font-family: 'Lato', sans-serif;
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  box-shadow: 0 4px 16px rgba(200,16,46,0.45);
+  transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
+}
+
+.feedback-fab:hover {
+  background: var(--nu-red-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(200,16,46,0.55);
+}
+
+.feedback-fab:active { transform: scale(0.97); }
+
+.feedback-fab svg { flex-shrink: 0; }
+
+@media (max-width: 480px) {
+  .feedback-fab span { display: none; }
+  .feedback-fab { padding: 0.75rem; border-radius: 50%; }
+}
+
 /* ─── Card interaction & badges ──────────────── */
 .card { cursor: pointer; }
 
