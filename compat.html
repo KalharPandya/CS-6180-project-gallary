@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CS 6180 — Audio &amp; Text Compatibility Test</title>
+  <link rel="stylesheet" href="styles/main.css">
+  <style>
+    body { overflow-y: auto; height: auto; min-height: 100dvh; }
+
+    .compat-page {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 2rem 1.5rem 4rem;
+      display: flex;
+      flex-direction: column;
+      gap: 2.5rem;
+    }
+
+    .compat-page h2 {
+      font-size: 1.05rem;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--nu-red);
+      margin-bottom: 1rem;
+      border-bottom: 2px solid var(--nu-red);
+      padding-bottom: 0.4rem;
+    }
+
+    /* ─── Card ────────────────────── */
+    .compat-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 1.5rem 1.75rem;
+    }
+
+    /* ─── Audio ────────────────────── */
+    .audio-controls {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .record-btn {
+      display: flex;
+      align-items: center;
+      gap: 0.55rem;
+      padding: 0.65rem 1.4rem;
+      border: none;
+      border-radius: var(--radius);
+      font-family: inherit;
+      font-size: 0.95rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: background 0.15s, transform 0.1s;
+      background: var(--nu-red);
+      color: #fff;
+      user-select: none;
+    }
+    .record-btn:active { transform: scale(0.97); }
+    .record-btn.recording {
+      background: #222;
+      animation: pulse-ring 1.2s ease-in-out infinite;
+    }
+    @keyframes pulse-ring {
+      0%, 100% { box-shadow: 0 0 0 0 rgba(200,16,46,0.5); }
+      50%       { box-shadow: 0 0 0 8px rgba(200,16,46,0); }
+    }
+
+    .record-dot {
+      width: 11px;
+      height: 11px;
+      border-radius: 50%;
+      background: #fff;
+      flex-shrink: 0;
+      transition: transform 0.2s;
+    }
+    .record-btn.recording .record-dot {
+      background: var(--nu-red);
+      transform: scale(1.3);
+    }
+
+    .audio-status {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      min-width: 120px;
+    }
+    .audio-status.active { color: var(--nu-red); font-weight: 700; }
+
+    .audio-playback {
+      width: 100%;
+      margin-top: 1.25rem;
+      display: none;
+    }
+    .audio-playback.visible { display: block; }
+    .audio-playback audio {
+      width: 100%;
+      height: 42px;
+    }
+
+    .audio-history {
+      margin-top: 1.25rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.6rem;
+    }
+    .audio-history-label {
+      font-size: 0.8rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--text-muted);
+    }
+    .audio-history-item {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 0.4rem 0.75rem;
+    }
+    .audio-history-item audio { flex: 1; height: 36px; }
+    .audio-history-item .audio-clip-label {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      white-space: nowrap;
+    }
+    .audio-history-item .delete-clip {
+      background: none;
+      border: none;
+      cursor: pointer;
+      color: var(--text-muted);
+      font-size: 1rem;
+      line-height: 1;
+      padding: 0 0.1rem;
+      flex-shrink: 0;
+    }
+    .audio-history-item .delete-clip:hover { color: var(--nu-red); }
+
+    .audio-error {
+      margin-top: 0.75rem;
+      font-size: 0.88rem;
+      color: var(--nu-red);
+      display: none;
+    }
+    .audio-error.visible { display: block; }
+
+    /* ─── Text ────────────────────── */
+    .text-input-area {
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+
+    .text-input-area textarea {
+      width: 100%;
+      min-height: 110px;
+      padding: 0.75rem 1rem;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      font-family: inherit;
+      font-size: 0.95rem;
+      color: var(--text);
+      background: var(--bg);
+      resize: vertical;
+      transition: border-color 0.15s;
+      line-height: 1.55;
+    }
+    .text-input-area textarea:focus {
+      outline: none;
+      border-color: var(--nu-red);
+      box-shadow: 0 0 0 3px rgba(200,16,46,0.1);
+    }
+    .text-input-area textarea::placeholder { color: #bbb; }
+
+    .text-controls {
+      display: flex;
+      gap: 0.6rem;
+      flex-wrap: wrap;
+    }
+
+    .text-btn {
+      padding: 0.55rem 1.2rem;
+      border: none;
+      border-radius: var(--radius);
+      font-family: inherit;
+      font-size: 0.9rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: background 0.15s;
+    }
+    .text-btn-primary { background: var(--nu-red); color: #fff; }
+    .text-btn-primary:hover { background: var(--nu-red-dark); }
+    .text-btn-secondary { background: var(--bg); color: var(--text-muted); border: 1px solid var(--border); }
+    .text-btn-secondary:hover { background: var(--border); }
+
+    .text-echo-wrapper {
+      margin-top: 0.5rem;
+      display: none;
+    }
+    .text-echo-wrapper.visible { display: block; }
+    .text-echo-label {
+      font-size: 0.8rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--text-muted);
+      margin-bottom: 0.4rem;
+    }
+    .text-echo-box {
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-left: 3px solid var(--nu-red);
+      border-radius: var(--radius);
+      padding: 0.75rem 1rem;
+      font-size: 0.95rem;
+      line-height: 1.6;
+      white-space: pre-wrap;
+      word-break: break-word;
+      color: var(--text);
+      min-height: 48px;
+    }
+
+    .char-count {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      text-align: right;
+      margin-top: -0.25rem;
+    }
+
+    /* ─── Responsive ───────────────── */
+    @media (max-width: 520px) {
+      .compat-page { padding: 1.25rem 1rem 3rem; }
+      .compat-card { padding: 1.1rem 1.1rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="nu-brand-bar">
+    <img class="nu-brand-bar-logo" src="assets/logos/nu-logo-white.png" alt="Northeastern University">
+    <span class="nu-brand-bar-sep"></span>
+    <span class="nu-brand-bar-text">Khoury College of Computer Sciences</span>
+  </div>
+
+  <header class="site-header">
+    <h1>CS 6180 &mdash; Generative AI</h1>
+    <p>Audio &amp; Text Compatibility Test</p>
+  </header>
+
+  <nav class="site-nav">
+    <a href="index.html">← Gallery</a>
+  </nav>
+
+  <div class="compat-page">
+
+    <!-- ─── Audio Section ─────────────────────── -->
+    <div class="compat-card">
+      <h2>Audio</h2>
+      <p style="font-size:0.9rem;color:var(--text-muted);margin-bottom:1.25rem;">
+        Click <strong>Start Recording</strong> to capture audio from your microphone.
+        Click again to stop — your recording plays back automatically.
+      </p>
+
+      <div class="audio-controls">
+        <button class="record-btn" id="recordBtn">
+          <span class="record-dot"></span>
+          <span class="record-btn-label">Start Recording</span>
+        </button>
+        <span class="audio-status" id="audioStatus">Ready</span>
+      </div>
+
+      <div class="audio-error" id="audioError"></div>
+
+      <div class="audio-playback" id="audioPlayback">
+        <div class="audio-history-label" style="margin-bottom:0.5rem;">Latest recording</div>
+        <audio id="audioPlayer" controls></audio>
+      </div>
+
+      <div class="audio-history" id="audioHistory" style="display:none;">
+        <div class="audio-history-label">Previous recordings</div>
+        <div id="audioHistoryList"></div>
+      </div>
+    </div>
+
+    <!-- ─── Text Section ──────────────────────── -->
+    <div class="compat-card">
+      <h2>Text</h2>
+      <p style="font-size:0.9rem;color:var(--text-muted);margin-bottom:1.25rem;">
+        Type anything below and press <strong>Echo</strong> — your text is reflected back exactly as entered.
+      </p>
+
+      <div class="text-input-area">
+        <textarea id="textInput" placeholder="Type your message here…" maxlength="2000"></textarea>
+        <div class="char-count"><span id="charCount">0</span> / 2000</div>
+        <div class="text-controls">
+          <button class="text-btn text-btn-primary" id="echoBtn">Echo</button>
+          <button class="text-btn text-btn-secondary" id="clearBtn">Clear</button>
+        </div>
+        <div class="text-echo-wrapper" id="echoWrapper">
+          <div class="text-echo-label">Echo</div>
+          <div class="text-echo-box" id="echoBox"></div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <script>
+    /* ═══════════════════════════════════════
+       AUDIO
+    ═══════════════════════════════════════ */
+    const recordBtn   = document.getElementById('recordBtn');
+    const recordLabel = recordBtn.querySelector('.record-btn-label');
+    const audioStatus = document.getElementById('audioStatus');
+    const audioError  = document.getElementById('audioError');
+    const audioPlayback = document.getElementById('audioPlayback');
+    const audioPlayer = document.getElementById('audioPlayer');
+    const audioHistory = document.getElementById('audioHistory');
+    const audioHistoryList = document.getElementById('audioHistoryList');
+
+    let mediaRecorder = null;
+    let audioChunks   = [];
+    let isRecording   = false;
+    let clipCount     = 0;
+    let previousBlob  = null;
+
+    function showError(msg) {
+      audioError.textContent = msg;
+      audioError.classList.add('visible');
+    }
+    function clearError() {
+      audioError.classList.remove('visible');
+      audioError.textContent = '';
+    }
+
+    function formatDuration(ms) {
+      const s = Math.round(ms / 1000);
+      return s < 60 ? `${s}s` : `${Math.floor(s/60)}m ${s%60}s`;
+    }
+
+    function pushToHistory(blob, duration) {
+      // Move current "latest" to history if there was one
+      if (previousBlob) {
+        clipCount++;
+        const url   = URL.createObjectURL(previousBlob);
+        const item  = document.createElement('div');
+        item.className = 'audio-history-item';
+        item.innerHTML = `
+          <span class="audio-clip-label">Clip ${clipCount}</span>
+          <audio src="${url}" controls></audio>
+          <button class="delete-clip" title="Delete clip">✕</button>
+        `;
+        item.querySelector('.delete-clip').addEventListener('click', () => {
+          URL.revokeObjectURL(url);
+          item.remove();
+          if (!audioHistoryList.children.length) audioHistory.style.display = 'none';
+        });
+        audioHistoryList.prepend(item);
+        audioHistory.style.display = 'block';
+      }
+    }
+
+    async function startRecording() {
+      clearError();
+      try {
+        const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
+        // Pick a supported MIME type
+        const mimeType = ['audio/webm;codecs=opus','audio/webm','audio/ogg;codecs=opus','audio/mp4','']
+          .find(t => !t || MediaRecorder.isTypeSupported(t)) ?? '';
+        mediaRecorder = new MediaRecorder(stream, mimeType ? { mimeType } : {});
+        audioChunks = [];
+
+        mediaRecorder.ondataavailable = e => {
+          if (e.data && e.data.size > 0) audioChunks.push(e.data);
+        };
+
+        mediaRecorder.onstop = () => {
+          const blob = new Blob(audioChunks, { type: mediaRecorder.mimeType || 'audio/webm' });
+          const url  = URL.createObjectURL(blob);
+          pushToHistory(previousBlob, 0);
+          previousBlob = blob;
+          audioPlayer.src = url;
+          audioPlayback.classList.add('visible');
+          audioPlayer.play().catch(() => {});   // auto-play; may be blocked by browser policy — that's OK
+          stream.getTracks().forEach(t => t.stop());
+        };
+
+        mediaRecorder.start(100);
+        isRecording = true;
+        recordBtn.classList.add('recording');
+        recordLabel.textContent = 'Stop & Play';
+        audioStatus.textContent = 'Recording…';
+        audioStatus.classList.add('active');
+      } catch (err) {
+        if (err.name === 'NotAllowedError' || err.name === 'PermissionDeniedError') {
+          showError('Microphone permission denied. Please allow microphone access and try again.');
+        } else if (err.name === 'NotFoundError') {
+          showError('No microphone found on this device.');
+        } else {
+          showError(`Could not start recording: ${err.message}`);
+        }
+      }
+    }
+
+    function stopRecording() {
+      if (mediaRecorder && mediaRecorder.state !== 'inactive') {
+        mediaRecorder.stop();
+      }
+      isRecording = false;
+      recordBtn.classList.remove('recording');
+      recordLabel.textContent = 'Start Recording';
+      audioStatus.textContent = 'Playing back…';
+      audioStatus.classList.remove('active');
+      audioPlayer.addEventListener('ended', () => {
+        audioStatus.textContent = 'Ready';
+      }, { once: true });
+    }
+
+    recordBtn.addEventListener('click', () => {
+      if (isRecording) stopRecording();
+      else startRecording();
+    });
+
+
+    /* ═══════════════════════════════════════
+       TEXT ECHO
+    ═══════════════════════════════════════ */
+    const textInput  = document.getElementById('textInput');
+    const echoBtn    = document.getElementById('echoBtn');
+    const clearBtn   = document.getElementById('clearBtn');
+    const echoWrapper = document.getElementById('echoWrapper');
+    const echoBox    = document.getElementById('echoBox');
+    const charCount  = document.getElementById('charCount');
+
+    textInput.addEventListener('input', () => {
+      charCount.textContent = textInput.value.length;
+    });
+
+    echoBtn.addEventListener('click', () => {
+      const val = textInput.value;
+      if (!val.trim()) return;
+      echoBox.textContent = val;
+      echoWrapper.classList.add('visible');
+      echoBox.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    });
+
+    clearBtn.addEventListener('click', () => {
+      textInput.value = '';
+      charCount.textContent = '0';
+      echoWrapper.classList.remove('visible');
+      echoBox.textContent = '';
+      textInput.focus();
+    });
+
+    // Echo on Enter (Ctrl/Cmd+Enter to avoid blocking newlines)
+    textInput.addEventListener('keydown', e => {
+      if ((e.ctrlKey || e.metaKey) && e.key === 'Enter') {
+        e.preventDefault();
+        echoBtn.click();
+      }
+    });
+  </script>
+
+</body>
+</html>
