@@ -69,6 +69,33 @@
           <div class="viewer-pip-resize" title="Drag to resize"></div>
         </div>
 
+        <!-- ─ Q&A FAB ─ -->
+        <button class="qa-fab" aria-label="Open Q&A" title="Questions &amp; Discussion">
+          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path d="M21 15C21 15.5304 20.7893 16.0391 20.4142 16.4142C20.0391 16.7893 19.5304 17 19 17H7L3 21V5C3 4.46957 3.21071 3.96086 3.58579 3.58579C3.96086 3.21071 4.46957 3 5 3H19C19.5304 3 20.0391 3.21071 20.4142 3.58579C20.7893 3.96086 21 4.46957 21 5V15Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          <span class="qa-fab-label">Q&amp;A</span>
+        </button>
+
+        <!-- ─ Q&A Panel ─ -->
+        <div class="qa-panel" hidden>
+          <div class="qa-panel-header">
+            <span class="qa-panel-title">&#128172; Discussion</span>
+            <button class="qa-close" aria-label="Close">&#x2715;</button>
+          </div>
+          <div class="qa-list"></div>
+          <div class="qa-new-post">
+            <form class="qa-form qa-form--top">
+              <input  class="qa-input" name="author_name" placeholder="Your name *" required maxlength="80" autocomplete="name">
+              <input  class="qa-input" name="email" type="email" placeholder="Email (optional)" maxlength="120" autocomplete="email">
+              <textarea class="qa-input qa-textarea" name="body" placeholder="Ask a question or start a discussion…" required maxlength="2000"></textarea>
+              <div class="qa-form-actions">
+                <button class="qa-submit" type="submit">Post</button>
+              </div>
+            </form>
+          </div>
+        </div>
+
       </div><!-- /viewer-body -->
     </div>`;
   }
@@ -308,6 +335,9 @@
   const resetScale = el => { if (el) { el.style.transform = ''; el.style.transformOrigin = ''; } };
 
   /* ── Main ───────────────────────────────────────── */
+  const _slugParts = window.location.pathname.replace(/\/index\.html$/, '').split('/').filter(Boolean);
+  const _teamSlug  = _slugParts[_slugParts.length - 1] || 'unknown';
+
   fetch('./project.json')
     .then(r => { if (!r.ok) throw new Error(); return r.json(); })
     .then(team => {
@@ -339,6 +369,17 @@
       initKeyboard(S);
       initTouch(S);
       initScrollZoom(S);
+
+      // Load Supabase CDN, then qa.js, then init Q&A
+      function loadScript(src, cb) {
+        const s = document.createElement('script');
+        s.src = src; s.onload = cb;
+        document.head.appendChild(s);
+      }
+      loadScript(
+        'https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js',
+        () => loadScript('../../js/qa.js', () => window.initQA?.(_teamSlug, team.name))
+      );
     })
     .catch(() => {
       document.body.innerHTML = `
