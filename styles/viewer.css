@@ -266,7 +266,9 @@ embed.viewer-pdf {
 /* Show correct PiP content per mode */
 .viewer-body.mode-default .viewer-pip-video,
 .viewer-body.mode-poster  .viewer-pip-video { display: block; }
-.viewer-body.mode-swapped .viewer-pip-pdf   { display: block; }
+.viewer-body.mode-swapped .viewer-pip-pdf      { display: block; }
+/* Hide pip video-wrap in swapped mode — prevents ghost play button over poster */
+.viewer-body.mode-swapped .pip-video-wrap      { display: none; }
 
 /* PiP play overlay (smaller play button) */
 .viewer-pip-inner .pip-play-overlay .video-play-btn {

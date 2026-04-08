@@ -23,7 +23,7 @@
       <div class="viewer-header">
         <a class="viewer-back" href="../../index.html">&#8592; Gallery</a>
         <img class="viewer-nu-logo" src="../../assets/logos/nu-logo-white.png" alt="Northeastern University">
-        <span class="viewer-title">${team.name} &mdash; ${team.title}</span>
+        <span class="viewer-title">${team.name}</span>
         <div class="viewer-controls">
           <button class="viewer-tab" data-mode="poster" ${!posterUrl?'disabled':''} title="Poster [P]">&#128196; Poster</button>
           <button class="viewer-tab" data-mode="video"  ${!videoUrl ?'disabled':''} title="Video [V]">&#127902; Video</button>
@@ -107,11 +107,24 @@
 
     bodyEl.className = `viewer-body mode-${mode}`;
 
-    // Pause whichever video is about to be hidden
+    // Pause whichever video is about to be hidden; save and restore play state
     const mainVid = document.querySelector('.viewer-video');
     const pipVid  = document.querySelector('.viewer-pip-video');
-    if (mode === 'poster' || mode === 'default') mainVid?.pause();
-    if (mode === 'video'  || mode === 'swapped') pipVid?.pause();
+    if (mode === 'poster' || mode === 'default') {
+      S._mainWasPlaying = !!(mainVid && !mainVid.paused);
+      mainVid?.pause();
+    }
+    if (mode === 'video' || mode === 'swapped') {
+      S._pipWasPlaying = !!(pipVid && !pipVid.paused);
+      pipVid?.pause();
+    }
+    // Resume whichever video is now becoming visible, if it was playing before
+    if (mode === 'video' || mode === 'swapped') {
+      if (S._mainWasPlaying) { mainVid?.play(); S._mainWasPlaying = false; }
+    }
+    if (mode === 'default' || mode === 'poster') {
+      if (S._pipWasPlaying) { pipVid?.play(); S._pipWasPlaying = false; }
+    }
 
     // PiP: visible in default (video) + poster (video) + swapped (pdf)
     if (pipEl) {
@@ -192,6 +205,35 @@
       maxBtn.textContent = expanded ? '\u229F' : '\u2922';
       maxBtn.title       = expanded ? 'Collapse PiP' : 'Expand PiP';
       pip.style.width = '';
+    });
+
+    // ─ Double-click PiP inner → swap main ↔ PiP, preserve playback position ─
+    const pipInner = pip.querySelector('.viewer-pip-inner');
+    pipInner?.addEventListener('dblclick', () => {
+      const targetMode = S.mode === 'swapped' ? 'default' : 'swapped';
+
+      // Which video is currently active in the visible role?
+      const fromVid = S.mode === 'swapped'
+        ? document.querySelector('.viewer-video')      // main in swapped mode
+        : document.querySelector('.viewer-pip-video'); // pip  in default/poster mode
+
+      const toVid = S.mode === 'swapped'
+        ? document.querySelector('.viewer-pip-video')
+        : document.querySelector('.viewer-video');
+
+      const wasPlaying = fromVid ? !fromVid.paused : false;
+      const savedTime  = fromVid ? fromVid.currentTime : 0;
+
+      // Suppress applyMode auto-resume so we control currentTime first
+      S._mainWasPlaying = false;
+      S._pipWasPlaying  = false;
+
+      applyMode(targetMode, S);
+
+      if (toVid) {
+        toVid.currentTime = savedTime;
+        if (wasPlaying) toVid.play();
+      }
     });
   }
 
@@ -357,7 +399,13 @@
         tabBtns:  document.querySelectorAll('.viewer-tab[data-mode]'),
       };
 
-      applyMode(posterUrl && videoUrl ? 'default' : posterUrl ? 'poster' : 'video', S);
+      const preferredMode = team.defaultMode === 'video' ? 'video' : 'poster';
+      applyMode(
+        posterUrl && videoUrl
+          ? (preferredMode === 'video' ? 'swapped' : 'default')
+          : posterUrl ? 'poster' : 'video',
+        S
+      );
 
       S.tabBtns.forEach(b => b.addEventListener('click', () => applyMode(b.dataset.mode, S)));
 
