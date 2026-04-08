@@ -1,14 +1,17 @@
 {
-  "name": "Team 29",
-  "title": "A RAG-Powered Intelligent Guide for Local Discovery",
-  "members": [
-    "Jeffrey Chen",
-    "Sai Manichandana Devi Thumati",
-    "Vishal Kumar"
-  ],
-  "description": "",
-  "thumbnail": "assets/thumbnail.png",
-  "poster": "assets/poster.png",
-  "video": "assets/video.mp4",
-  "tags": []
+    "name":  "Team 29",
+    "title":  "A RAG-Powered Intelligent Guide for Local Discovery",
+    "members":  [
+                    "Jeffrey Chen",
+                    "Sai Manichandana Devi Thumati",
+                    "Vishal Kumar"
+                ],
+    "description":  "",
+    "thumbnail":  "assets/thumbnail.png",
+    "poster":  "assets/poster.png",
+    "video":  "assets/video.mp4",
+    "tags":  [
+
+             ],
+    "defaultMode":  "video"
 }
