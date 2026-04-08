@@ -1,9 +1,29 @@
-/* Staff Page — 16:9 single-viewport layout */
+/* ── Dark theme override (staff page only) ─────────── */
+body.staff-page {
+  --bg:        #111214;
+  --bg-card:   #1c1e22;
+  --text:      #e8e8e8;
+  --text-muted:#888;
+  --border:    #2e3035;
+  --header-bg: #0a0b0d;
+  --shadow:     0 2px 8px rgba(0,0,0,0.5);
+  --shadow-hover: 0 8px 28px rgba(0,0,0,0.7);
+  background: var(--bg);
+  color: var(--text);
+}
 
-/* Back nav */
+body.staff-page .site-header {
+  background: var(--header-bg);
+  border-bottom-color: var(--nu-red);
+  box-shadow: 0 1px 6px rgba(0,0,0,0.5);
+}
+
+body.staff-page .site-header h1 { color: var(--nu-red); }
+body.staff-page .site-header p  { color: var(--text-muted); }
+
+/* ── Back nav ──────────────────────────────────────── */
 .staff-nav {
   flex-shrink: 0;
-  max-width: 100%;
   padding: 0.5rem 1.5rem;
   display: flex;
   gap: 1.5rem;
@@ -19,11 +39,9 @@
   letter-spacing: 0.04em;
 }
 
-.staff-nav a:hover {
-  text-decoration: underline;
-}
+.staff-nav a:hover { text-decoration: underline; }
 
-/* ── Main canvas: fills remaining viewport height ── */
+/* ── Main canvas: fills remaining viewport height ──── */
 .staff-canvas {
   flex: 1;
   min-height: 0;
@@ -32,11 +50,13 @@
   gap: 0;
 }
 
-/* ── Columns ──────────────────────────────────────── */
+/* ── Columns ───────────────────────────────────────── */
 .staff-col {
   display: flex;
   flex-direction: column;
-  padding: 1.5rem 2rem;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
   min-height: 0;
   overflow: hidden;
 }
@@ -44,27 +64,25 @@
 .staff-col--instructor {
   border-right: 1px solid var(--border);
   background: var(--bg-card);
-  justify-content: flex-start;
-  align-items: center;
-  text-align: center;
 }
 
 .staff-col--tas {
   background: var(--bg);
-  justify-content: flex-start;
+  gap: 1.5rem;
 }
 
 /* ── Section title ─────────────────────────────────── */
 .staff-section-title {
-  font-size: 0.7rem;
+  font-size: 0.68rem;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.12em;
   color: var(--text-muted);
-  margin-bottom: 1.25rem;
+  margin-bottom: 1.5rem;
   padding-bottom: 0.4rem;
   border-bottom: 2px solid var(--nu-red);
   width: 100%;
+  text-align: center;
 }
 
 /* ── Card ──────────────────────────────────────────── */
@@ -78,22 +96,23 @@
   flex-direction: column;
   align-items: center;
   text-align: center;
-  padding: 1.5rem 1rem 1.25rem;
+  padding: 2rem 1.5rem 1.75rem;
   transition: transform 0.2s, box-shadow 0.2s;
+  width: 100%;
 }
 
 .staff-card:hover {
-  transform: translateY(-2px);
+  transform: translateY(-3px);
   box-shadow: var(--shadow-hover);
 }
 
-/* ── Circular photo — scales with viewport height ── */
+/* ── Circular photo ────────────────────────────────── */
 .staff-photo-wrap {
-  width: clamp(72px, 12vh, 130px);
-  height: clamp(72px, 12vh, 130px);
+  width: clamp(80px, 13vh, 150px);
+  height: clamp(80px, 13vh, 150px);
   border-radius: 50%;
   overflow: hidden;
-  margin-bottom: 0.9rem;
+  margin-bottom: 1rem;
   border: 3px solid var(--nu-red);
   flex-shrink: 0;
 }
@@ -111,7 +130,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 0.35rem;
+  gap: 0.4rem;
   width: 100%;
 }
 
@@ -124,7 +143,7 @@
 }
 
 .staff-name {
-  font-size: clamp(0.85rem, 1.4vh, 1.1rem);
+  font-size: clamp(0.9rem, 1.5vh, 1.15rem);
   font-weight: 700;
   color: var(--text);
 }
@@ -146,8 +165,8 @@
 }
 
 .staff-role--instructor {
-  background: var(--nu-black);
-  color: #fff;
+  background: #fff;
+  color: #111;
 }
 
 .staff-role--ta {
@@ -155,16 +174,25 @@
   color: #fff;
 }
 
-/* ── TA row: 3 cards side by side ──────────────────── */
+/* ── TA triangle layout ────────────────────────────── */
+/* Row 1: first card centered (Kalhar)                 */
+/* Row 2: two cards side by side (Ackshay, Jiayi)      */
 .ta-row {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: 1fr 1fr;
   gap: 1.25rem;
   width: 100%;
 }
 
-/* ─── Responsive ──────────────────────────────── */
-@media (max-width: 640px) {
+/* Top card spans both columns, constrained + centered */
+.ta-row > .staff-card:first-child {
+  grid-column: 1 / 3;
+  width: 52%;
+  margin: 0 auto;
+}
+
+/* ── Responsive ────────────────────────────────────── */
+@media (max-width: 760px) {
   .staff-canvas {
     grid-template-columns: 1fr;
   }
@@ -172,10 +200,17 @@
     border-right: none;
     border-bottom: 1px solid var(--border);
   }
+  .ta-row > .staff-card:first-child {
+    width: 80%;
+  }
 }
 
-@media (max-width: 640px) {
+@media (max-width: 480px) {
   .ta-row {
-    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    grid-template-columns: 1fr;
+  }
+  .ta-row > .staff-card:first-child {
+    grid-column: 1;
+    width: 100%;
   }
 }
