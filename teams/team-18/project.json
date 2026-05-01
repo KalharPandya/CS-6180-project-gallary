@@ -1,17 +1,11 @@
 {
-    "name":  "Team 18",
-    "title":  "Does Fine-Tuning Make Small LLMs More Robust? Testing Tool-Calling and Fault Recovery in Gemma 2B vs. Phi-3 Mini",
-    "members":  [
-                    "Sam Selvaraj",
-                    "Jatan Nitesh Patel",
-                    "Silas Bates"
-                ],
-    "description":  "",
-    "thumbnail":  "assets/thumbnail.png",
-    "poster":  "assets/poster.png",
-    "video":  "assets/video.mp4",
-    "tags":  [
-
-             ],
-    "defaultMode":  "video"
+  "name": "Team 18",
+  "title": "[Project Title]",
+  "members": [],
+  "description": "",
+  "thumbnail": "assets/thumbnail.png",
+  "poster": "assets/poster.png",
+  "video": "assets/video.mp4",
+  "tags": [],
+  "defaultMode": "video"
 }

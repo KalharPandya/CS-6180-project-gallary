@@ -2,30 +2,19 @@
   {
     "slug": "team-01",
     "name": "Team 01",
-    "title": "Automating vehicle damage assessment in the insurance industry",
-    "members": [
-      "Vishwajeet Hogale",
-      "Anjali Pai",
-      "Nitya Ravi"
-    ],
-    "description": "Sample team project for validating the poster and video viewer.",
+    "title": "[Project Title]",
+    "members": [],
+    "description": "",
     "thumbnail": "teams/team-01/assets/thumbnail.png",
     "poster": "assets/poster.png",
     "video": "assets/video.mp4",
-    "tags": [
-      "generative-ai",
-      "sample"
-    ]
+    "tags": []
   },
   {
     "slug": "team-02",
     "name": "Team 02",
-    "title": "Evaluating Hallucination Detection in Financial RAG",
-    "members": [
-      "Rudrajit Banerjee",
-      "Bijin Chakraborty",
-      "Mirat Shah"
-    ],
+    "title": "[Project Title]",
+    "members": [],
     "description": "",
     "thumbnail": "teams/team-02/assets/thumbnail.png",
     "poster": "assets/poster.png",
@@ -35,12 +24,8 @@
   {
     "slug": "team-03",
     "name": "Team 03",
-    "title": "Evaluating Hallucination Behavior in Retrieval-Augmented Generation Systems",
-    "members": [
-      "Arzoo Jiwani",
-      "Rahul Abhijit Kulkarni",
-      "Yashi Chawla"
-    ],
+    "title": "[Project Title]",
+    "members": [],
     "description": "",
     "thumbnail": "teams/team-03/assets/thumbnail.png",
     "poster": "assets/poster.png",
@@ -50,12 +35,8 @@
   {
     "slug": "team-04",
     "name": "Team 04",
-    "title": "Comparative Study of Classical, Graph-Based, and LLM-Guided Video Summarization on TVSum and SumMe",
-    "members": [
-      "Hariharan Chandrasekar",
-      "Niranjan Sathish",
-      "Saumith Devarasetty"
-    ],
+    "title": "[Project Title]",
+    "members": [],
     "description": "",
     "thumbnail": "teams/team-04/assets/thumbnail.png",
     "poster": "assets/poster.png",
@@ -65,12 +46,8 @@
   {
     "slug": "team-05",
     "name": "Team 05",
-    "title": "FinChartAudit: Detecting Misleading Financial Charts with Vision-Language Models and Textual Grounding",
-    "members": [
-      "Mengshan Li",
-      "Wenshuang Zhou",
-      "Tong Wu"
-    ],
+    "title": "[Project Title]",
+    "members": [],
     "description": "",
     "thumbnail": "teams/team-05/assets/thumbnail.png",
     "poster": "assets/poster.png",
@@ -80,12 +57,8 @@
   {
     "slug": "team-06",
     "name": "Team 06",
-    "title": "Comparing Prompting Strategies for Automatic Educational Quiz Generation",
-    "members": [
-      "Mengru Li",
-      "Difan Xie",
-      "Sizhi Chen"
-    ],
+    "title": "[Project Title]",
+    "members": [],
     "description": "",
     "thumbnail": "teams/team-06/assets/thumbnail.png",
     "poster": "assets/poster.png",
@@ -95,12 +68,8 @@
   {
     "slug": "team-07",
     "name": "Team 07",
-    "title": "MarketLens: Turning Financial News into Actionable Market Intelligence",
-    "members": [
-      "Anandavardhana Hegde",
-      "Yogesh Thakku Suresh",
-      "Ayush Sharma"
-    ],
+    "title": "[Project Title]",
+    "members": [],
     "description": "",
     "thumbnail": "teams/team-07/assets/thumbnail.png",
     "poster": "assets/poster.png",
@@ -110,12 +79,8 @@
   {
     "slug": "team-08",
     "name": "Team 08",
-    "title": "Agentic RAG: Evaluating Tool Routing Accuracy Under Prompt Ambiguity",
-    "members": [
-      "Parin Shah",
-      "Henil Himanshukumar Patel",
-      "Heta Milan Shah"
-    ],
+    "title": "[Project Title]",
+    "members": [],
     "description": "",
     "thumbnail": "teams/team-08/assets/thumbnail.png",
     "poster": "assets/poster.png",
@@ -125,12 +90,8 @@
   {
     "slug": "team-09",
     "name": "Team 09",
-    "title": "FinAgent: Multi-Agent System for Automated Financial Risk Screening",
-    "members": [
-      "Sumit Kanu",
-      "Om Mane",
-      "Sharan Giri"
-    ],
+    "title": "[Project Title]",
+    "members": [],
     "description": "",
     "thumbnail": "teams/team-09/assets/thumbnail.png",
     "poster": "assets/poster.png",
@@ -140,12 +101,8 @@
   {
     "slug": "team-10",
     "name": "Team 10",
-    "title": "LLM Agent Self-Correction: Do Agents Actually Fix Their Mistakes?",
-    "members": [
-      "Manav Kamleshbhai Dhamani",
-      "Shrey Babulal Patel",
-      "Aditya Chatterjee"
-    ],
+    "title": "[Project Title]",
+    "members": [],
     "description": "",
     "thumbnail": "teams/team-10/assets/thumbnail.png",
     "poster": "assets/poster.png",
@@ -155,12 +112,8 @@
   {
     "slug": "team-11",
     "name": "Team 11",
-    "title": "Detecting Hallucination in Large Language Models via Internal Circuit Activations",
-    "members": [
-      "Siddhartha Roy",
-      "Akshita Singh",
-      "Prabesh Paudel"
-    ],
+    "title": "[Project Title]",
+    "members": [],
     "description": "",
     "thumbnail": "teams/team-11/assets/thumbnail.png",
     "poster": "assets/poster.png",
@@ -170,12 +123,8 @@
   {
     "slug": "team-12",
     "name": "Team 12",
-    "title": "RAGs for Trading: Evaluating Retrieval-Augmented Generation for Structured Financial Signal Analysis",
-    "members": [
-      "Ricky Lee",
-      "Tarun Badarvada",
-      "Dina Barua"
-    ],
+    "title": "[Project Title]",
+    "members": [],
     "description": "",
     "thumbnail": "teams/team-12/assets/thumbnail.png",
     "poster": "assets/poster.png",
@@ -185,12 +134,8 @@
   {
     "slug": "team-13",
     "name": "Team 13",
-    "title": "Beyond Naive RAG: Progressive Retrieval Enhancements and Adversarial Verification for Faithful Legal AI",
-    "members": [
-      "Sri Ram Sathiya Narayanan",
-      "Mohammed Ahnaf Tajwar",
-      "Sivapriya Sugumaran"
-    ],
+    "title": "[Project Title]",
+    "members": [],
     "description": "",
     "thumbnail": "teams/team-13/assets/thumbnail.png",
     "poster": "assets/poster.png",
@@ -200,12 +145,8 @@
   {
     "slug": "team-14",
     "name": "Team 14",
-    "title": "Lost in Simplification: Detecting Safety-Critical Errors in LLM-Generated Medication Instructions",
-    "members": [
-      "Rohit Abhijit Kulkarni",
-      "Atharv Talnikar",
-      "Christopher Huitt"
-    ],
+    "title": "[Project Title]",
+    "members": [],
     "description": "",
     "thumbnail": "teams/team-14/assets/thumbnail.png",
     "poster": "assets/poster.png",
@@ -215,12 +156,8 @@
   {
     "slug": "team-15",
     "name": "Team 15",
-    "title": "AI Financial Document Analyzer: Generating Spending Insights Using Retrieval-Augmented Generation",
-    "members": [
-      "Calvin Kim",
-      "Takara Truong",
-      "Chimiddorj Ulziisaikhan"
-    ],
+    "title": "[Project Title]",
+    "members": [],
     "description": "",
     "thumbnail": "teams/team-15/assets/thumbnail.png",
     "poster": "assets/poster.png",
@@ -230,12 +167,8 @@
   {
     "slug": "team-16",
     "name": "Team 16",
-    "title": "Selective Debate-Augmented RAG: Efficient Hallucination Detection via Asymmetric Agents and DSPy-Optimized Adjudication",
-    "members": [
-      "Shrivarshini Narayanan",
-      "Shivam Singh",
-      "Bhanu Harsha Yanamadala"
-    ],
+    "title": "[Project Title]",
+    "members": [],
     "description": "",
     "thumbnail": "teams/team-16/assets/thumbnail.png",
     "poster": "assets/poster.png",
@@ -245,12 +178,8 @@
   {
     "slug": "team-17",
     "name": "Team 17",
-    "title": "Agentic Data Analysis",
-    "members": [
-      "Jicheng Li",
-      "Ziyue Shen",
-      "Nathanael Chiang"
-    ],
+    "title": "[Project Title]",
+    "members": [],
     "description": "",
     "thumbnail": "teams/team-17/assets/thumbnail.png",
     "poster": "assets/poster.png",
@@ -260,12 +189,8 @@
   {
     "slug": "team-18",
     "name": "Team 18",
-    "title": "Does Fine-Tuning Make Small LLMs More Robust? Testing Tool-Calling and Fault Recovery in Gemma 2B vs. Phi-3 Mini",
-    "members": [
-      "Sam Selvaraj",
-      "Jatan Nitesh Patel",
-      "Silas Bates"
-    ],
+    "title": "[Project Title]",
+    "members": [],
     "description": "",
     "thumbnail": "teams/team-18/assets/thumbnail.png",
     "poster": "assets/poster.png",
@@ -275,12 +200,8 @@
   {
     "slug": "team-19",
     "name": "Team 19",
-    "title": "Evaluating an Automated Generative AI Pipeline for News-to-Video Creation",
-    "members": [
-      "Ran Zhao",
-      "Xiaofan Guo",
-      "Zhuoren Zhou"
-    ],
+    "title": "[Project Title]",
+    "members": [],
     "description": "",
     "thumbnail": "teams/team-19/assets/thumbnail.png",
     "poster": "assets/poster.png",
@@ -290,12 +211,8 @@
   {
     "slug": "team-20",
     "name": "Team 20",
-    "title": "FinSearch: Intent-Aware Financial Document Intelligence",
-    "members": [
-      "Moumita Baidya",
-      "Nidhi Vinodbhai Patel",
-      "Kirubhaharan Joseph Abraham"
-    ],
+    "title": "[Project Title]",
+    "members": [],
     "description": "",
     "thumbnail": "teams/team-20/assets/thumbnail.png",
     "poster": "assets/poster.png",
@@ -305,12 +222,8 @@
   {
     "slug": "team-21",
     "name": "Team 21",
-    "title": "Beyond Semantics: Bridging the Gap in Mental Health Dialogue via Emotion-Driven RAG and Safety Guardrails",
-    "members": [
-      "Chenchen Feng",
-      "Wenwen Han",
-      "Vesper Wang"
-    ],
+    "title": "[Project Title]",
+    "members": [],
     "description": "",
     "thumbnail": "teams/team-21/assets/thumbnail.png",
     "poster": "assets/poster.png",
@@ -320,12 +233,8 @@
   {
     "slug": "team-22",
     "name": "Team 22",
-    "title": "Comparative Study of Vision Language Models for Multimodal Fashion Search",
-    "members": [
-      "Aatmaj Amol Salunke",
-      "Chandan Gowda Keelara Shivanna",
-      "Sai Ritish Reddy Musku"
-    ],
+    "title": "[Project Title]",
+    "members": [],
     "description": "",
     "thumbnail": "teams/team-22/assets/thumbnail.png",
     "poster": "assets/poster.png",
@@ -335,12 +244,8 @@
   {
     "slug": "team-23",
     "name": "Team 23",
-    "title": "Macroeconomic research synthesis with Gen AI",
-    "members": [
-      "Tianyiru Chen",
-      "Christopher Gormley",
-      "Sean Ando"
-    ],
+    "title": "[Project Title]",
+    "members": [],
     "description": "",
     "thumbnail": "teams/team-23/assets/thumbnail.png",
     "poster": "assets/poster.png",
@@ -350,12 +255,8 @@
   {
     "slug": "team-24",
     "name": "Team 24",
-    "title": "Sensor-Aware Vision-Language Model Prompting for Accessible Scene Description",
-    "members": [
-      "Yixi Jin",
-      "Pauline Truong",
-      "Tianze Yin"
-    ],
+    "title": "[Project Title]",
+    "members": [],
     "description": "",
     "thumbnail": "teams/team-24/assets/thumbnail.png",
     "poster": "assets/poster.png",
@@ -365,12 +266,8 @@
   {
     "slug": "team-25",
     "name": "Team 25",
-    "title": "Evaluating Temporal and Source-Aware RAG in Dynamic Knowledge Environments",
-    "members": [
-      "Walgama Kankanamge Ashen De Silva",
-      "Nicholas Tietje",
-      "Katie Elyse Song"
-    ],
+    "title": "[Project Title]",
+    "members": [],
     "description": "",
     "thumbnail": "teams/team-25/assets/thumbnail.png",
     "poster": "assets/poster.png",
@@ -380,12 +277,8 @@
   {
     "slug": "team-26",
     "name": "Team 26",
-    "title": "From Dialogue to Data: Converting Patient-Doctor Conversations into SQL-Compatible Clinical Notes",
-    "members": [
-      "Bridget Leary",
-      "Elisabeth Sluchak",
-      "Priyam Bhardwaj"
-    ],
+    "title": "[Project Title]",
+    "members": [],
     "description": "",
     "thumbnail": "teams/team-26/assets/thumbnail.png",
     "poster": "assets/poster.png",
@@ -395,11 +288,8 @@
   {
     "slug": "team-27",
     "name": "Team 27",
-    "title": "Renters Legal Assistance Chatbot",
-    "members": [
-      "Maxwell Berry",
-      "En-Ping Su"
-    ],
+    "title": "[Project Title]",
+    "members": [],
     "description": "",
     "thumbnail": "teams/team-27/assets/thumbnail.png",
     "poster": "assets/poster.png",
@@ -409,11 +299,8 @@
   {
     "slug": "team-28",
     "name": "Team 28",
-    "title": "Generative Engine Optimization: Measuring and Improving Brand Visibility Across LLM Platforms",
-    "members": [
-      "Uday Sonawane",
-      "Divit Pratap Singh"
-    ],
+    "title": "[Project Title]",
+    "members": [],
     "description": "",
     "thumbnail": "teams/team-28/assets/thumbnail.png",
     "poster": "assets/poster.png",
@@ -423,12 +310,8 @@
   {
     "slug": "team-29",
     "name": "Team 29",
-    "title": "A RAG-Powered Intelligent Guide for Local Discovery",
-    "members": [
-      "Jeffrey Chen",
-      "Sai Manichandana Devi Thumati",
-      "Vishal Kumar"
-    ],
+    "title": "[Project Title]",
+    "members": [],
     "description": "",
     "thumbnail": "teams/team-29/assets/thumbnail.png",
     "poster": "assets/poster.png",
@@ -438,12 +321,8 @@
   {
     "slug": "team-30",
     "name": "Team 30",
-    "title": "Exploring the Impact of the Domain Specific Embeddings on Retrieval Augmented Generation (RAG) Performance",
-    "members": [
-      "Sining Meng",
-      "Gokulraj Muthukumar",
-      "Deepashree Srinivasa Rao Rannore"
-    ],
+    "title": "[Project Title]",
+    "members": [],
     "description": "",
     "thumbnail": "teams/team-30/assets/thumbnail.png",
     "poster": "assets/poster.png",
@@ -453,12 +332,8 @@
   {
     "slug": "team-31",
     "name": "Team 31",
-    "title": "PaperPilot: Multi-Agent Research Assistant",
-    "members": [
-      "Justin Trinh",
-      "Ankith Seethesh Vaidya",
-      "Sunidi Vijayakrishna Kumar"
-    ],
+    "title": "[Project Title]",
+    "members": [],
     "description": "",
     "thumbnail": "teams/team-31/assets/thumbnail.png",
     "poster": "assets/poster.png",
@@ -468,10 +343,8 @@
   {
     "slug": "team-32",
     "name": "Team 32",
-    "title": "Optimizing LLM-Generated Assessments",
-    "members": [
-      "Shantanu Shashank Dharmadhikari"
-    ],
+    "title": "[Project Title]",
+    "members": [],
     "description": "",
     "thumbnail": "teams/team-32/assets/thumbnail.png",
     "poster": "assets/poster.png",

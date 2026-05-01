@@ -1,17 +1,10 @@
 {
   "name": "Team 01",
-  "title": "Automating vehicle damage assessment in the insurance industry",
-  "members": [
-    "Vishwajeet Hogale",
-    "Anjali Pai",
-    "Nitya Ravi"
-  ],
-  "description": "Sample team project for validating the poster and video viewer.",
+  "title": "[Project Title]",
+  "members": [],
+  "description": "",
   "thumbnail": "assets/thumbnail.png",
   "poster": "assets/poster.png",
   "video": "assets/video.mp4",
-  "tags": [
-    "generative-ai",
-    "sample"
-  ]
+  "tags": []
 }

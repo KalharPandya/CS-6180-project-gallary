@@ -1,17 +1,11 @@
 {
-    "name":  "Team 15",
-    "title":  "AI Financial Document Analyzer: Generating Spending Insights Using Retrieval-Augmented Generation",
-    "members":  [
-                    "Calvin Kim",
-                    "Takara Truong",
-                    "Chimiddorj Ulziisaikhan"
-                ],
-    "description":  "",
-    "thumbnail":  "assets/thumbnail.png",
-    "poster":  "assets/poster.png",
-    "video":  "assets/video.mp4",
-    "tags":  [
-
-             ],
-    "defaultMode":  "video"
+  "name": "Team 15",
+  "title": "[Project Title]",
+  "members": [],
+  "description": "",
+  "thumbnail": "assets/thumbnail.png",
+  "poster": "assets/poster.png",
+  "video": "assets/video.mp4",
+  "tags": [],
+  "defaultMode": "video"
 }
